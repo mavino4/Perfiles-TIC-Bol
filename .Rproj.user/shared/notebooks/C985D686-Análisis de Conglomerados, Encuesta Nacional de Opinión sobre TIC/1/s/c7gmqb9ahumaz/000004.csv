@@ -1,0 +1,8 @@
+"0","library(randomForest)"
+"0","i_new_data <- i_input"
+"0","i_new_data$cluster <- as.factor(i_clust.mod$cluster)"
+"0","set.seed(12345)"
+"0","train = sample(1:nrow(i_new_data), nrow(i_new_data)/2)"
+"0","set.seed(12345)"
+"0","i_rf.mod <- randomForest(cluster ~ ., data = i_new_data, subset=train,"
+"0","                         importance=TRUE, ntree=2000)"

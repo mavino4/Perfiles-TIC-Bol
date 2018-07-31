@@ -1,0 +1,4 @@
+"0","vi.i_rf.mod_f <- data.frame(vi.i_rf.mod[vi.i_rf.mod>0.01][order(vi.i_rf.mod[vi.i_rf.mod>0.01],decreasing = T)])"
+"0","vi.i_rf.mod_f$Variables = c(""¿Cuánto pagaron por el televisor?"", ""¿Tiene computadora de escritorio, computadora portátil o tablet?"", ""¿Tiene servicio de TV cable?"", ""Nivel de instrucción Jefe del hogar"", ""Información que busca en internet"", ""Nivel de instrucción del entrevistado"", ""Sexo"", ""¿Tiene microondas?"", ""¿Tiene lavadora de ropa?"", ""¿Qué medio considera el más imparcial?"", ""¿Qué medio considera el más abierto a su participación?"", ""Deparetamento"", ""¿Cuántos días a la semana utiliza la computadora o tablet?"", ""¿Ingreso promedio mensual del hogar?"", ""¿Cuánto pagó la última vez que se compro un celular?"", ""Categoria ocupacional"")"
+"0","colnames(vi.i_rf.mod_f) <- c(""MeanDecreaseAccuracy"", ""Pregunta"")"
+"0","vi.i_rf.mod_f"

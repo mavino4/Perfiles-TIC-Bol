@@ -1,0 +1,6 @@
+"0","vi.i_rf.mod <- i_rf.mod$importance[,4]"
+"0","barplot(vi.i_rf.mod[order(vi.i_rf.mod)],"
+"0","     main = ""RF - Variables Importantes"","
+"0","     xlab = ""MeanDecreaseAccuracy"",horiz = T,"
+"0","     cex.axis = 0.8,"
+"0","     cex.names = 0.4,las=2)"

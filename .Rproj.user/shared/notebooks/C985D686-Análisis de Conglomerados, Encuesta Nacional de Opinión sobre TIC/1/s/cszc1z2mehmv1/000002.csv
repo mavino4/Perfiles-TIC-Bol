@@ -1,0 +1,2 @@
+"0","i_data <- readRDS(""/home/marco/Documents/Club Data Science/proyecto AGETIC/BASES/bd_imputada.rds"")"
+"0","i_input <- i_data[,-c(1,17,57,58,59,60)]"

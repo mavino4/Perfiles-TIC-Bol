@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1524576608919.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "961546673",
+    "id" : "B126ACAF",
+    "lastKnownWriteTime" : 1524615963,
+    "last_content_update" : 1524894310437,
+    "path" : "~/Documents/Club Data Science/proyecto AGETIC/BASES/Análisis de Conglomerados, Encuesta Nacional de Opinión sobre TIC.Rmd",
+    "project_path" : "Análisis de Conglomerados, Encuesta Nacional de Opinión sobre TIC.Rmd",
+    "properties" : {
+        "cursorPosition" : "316,0",
+        "last_setup_crc32" : "",
+        "scrollLine" : "312"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

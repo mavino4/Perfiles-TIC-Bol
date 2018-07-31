@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1524577267231.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3627208257",
+    "id" : "53453D23",
+    "lastKnownWriteTime" : 1524596841,
+    "last_content_update" : 1524596841053,
+    "path" : "~/Documents/Club Data Science/proyecto AGETIC/BASES/SeccionTres.R",
+    "project_path" : "SeccionTres.R",
+    "properties" : {
+        "cursorPosition" : "13,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

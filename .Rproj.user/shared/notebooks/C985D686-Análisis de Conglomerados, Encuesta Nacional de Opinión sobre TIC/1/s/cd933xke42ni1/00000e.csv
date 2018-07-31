@@ -1,0 +1,6 @@
+"0","PyrAgeA <-  i_new_data_f[ which(i_new_data_f$cluster=='A'),c(""P1"", ""P148"" ) ]"
+"0","PyrAgeB <-  i_new_data_f[ which(i_new_data_f$cluster=='B'),c(""P1"", ""P148"" ) ]"
+"0","PyrAgeC <-  i_new_data_f[ which(i_new_data_f$cluster=='C'),c(""P1"", ""P148"" ) ]"
+"0","ggplot(data=PyrAgeA, aes(PyrAgeA$P1)) + "
+"0","  geom_histogram(breaks=seq(10, 80, by =3), aes(fill=..count..))+"
+"0","  scale_fill_gradient(""Count"", low = ""red"", high = ""darkred"")"
