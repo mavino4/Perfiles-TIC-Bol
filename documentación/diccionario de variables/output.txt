@@ -1,0 +1,919 @@
+# position: 3
+bd$P2 <- as.factor(bd$P2)
+labels <- c("Si", "No" )
+levels(bd$P2) <- labels
+# position: 4
+bd$P3 <- as.factor(bd$P3)
+labels <- c("Hace 7 días o menos", "Entre 8 a 15 días", "Entre 16 a 30 días", "Hace más de 30 días" )
+levels(bd$P3) <- labels
+# position: 5
+bd$P1A <- as.factor(bd$P1A)
+labels <- c("No existe el servicio en el barrio/localidad", "El costo del servicio alto", "No tiene equipos para conectarse", "No sabe qué es Internet", "No sabe cómo usar Internet", "No está interesado en Internet", "El contenido de Internet es malo", "Otro" )
+levels(bd$P1A) <- labels
+# position: 6
+bd$P1A <- as.factor(bd$P1A)
+labels <- c("No existe el servicio en el barrio/localidad", "El costo del servicio alto", "No tiene equipos para conectarse", "No sabe qué es Internet", "No sabe cómo usar Internet", "No está interesado en Internet", "El contenido de Internet es malo", "Otro" )
+levels(bd$P1A) <- labels
+# position: 7
+bd$P1A <- as.factor(bd$P1A)
+labels <- c("No existe el servicio en el barrio/localidad", "El costo del servicio alto", "No tiene equipos para conectarse", "No sabe qué es Internet", "No sabe cómo usar Internet", "No está interesado en Internet", "El contenido de Internet es malo", "Otro" )
+levels(bd$P1A) <- labels
+# position: 8
+bd$P1A <- as.factor(bd$P1A)
+labels <- c("No existe el servicio en el barrio/localidad", "El costo del servicio alto", "No tiene equipos para conectarse", "No sabe qué es Internet", "No sabe cómo usar Internet", "No está interesado en Internet", "El contenido de Internet es malo", "Otro" )
+levels(bd$P1A) <- labels
+# position: 10
+bd$P2A <- as.factor(bd$P2A)
+labels <- c("Obtener información", "Descargar/imprimir documentos", "Obtener algún formulario", "Enviar/recibir correo electrónico", "Contactar a algún familiar/amigo", "Comprar/pagar artículos/servicios por Internet", "Revisar alguna red social (Facebook, WhatsApp, etc)", "Otro", "Ninguno" )
+levels(bd$P2A) <- labels
+# position: 11
+bd$P2A <- as.factor(bd$P2A)
+labels <- c("Obtener información", "Descargar/imprimir documentos", "Obtener algún formulario", "Enviar/recibir correo electrónico", "Contactar a algún familiar/amigo", "Comprar/pagar artículos/servicios por Internet", "Revisar alguna red social (Facebook, WhatsApp, etc)", "Otro", "Ninguno" )
+levels(bd$P2A) <- labels
+# position: 12
+bd$P2A <- as.factor(bd$P2A)
+labels <- c("Obtener información", "Descargar/imprimir documentos", "Obtener algún formulario", "Enviar/recibir correo electrónico", "Contactar a algún familiar/amigo", "Comprar/pagar artículos/servicios por Internet", "Revisar alguna red social (Facebook, WhatsApp, etc)", "Otro", "Ninguno" )
+levels(bd$P2A) <- labels
+# position: 13
+bd$P2A <- as.factor(bd$P2A)
+labels <- c("Obtener información", "Descargar/imprimir documentos", "Obtener algún formulario", "Enviar/recibir correo electrónico", "Contactar a algún familiar/amigo", "Comprar/pagar artículos/servicios por Internet", "Revisar alguna red social (Facebook, WhatsApp, etc)", "Otro", "Ninguno" )
+levels(bd$P2A) <- labels
+# position: 16
+bd$P4A <- as.factor(bd$P4A)
+labels <- c("Muy interesado", "M^s o menos interesado", "Poco interesado", "Nada interesado", "NS/NR" )
+levels(bd$P4A) <- labels
+# position: 17
+bd$P4 <- as.factor(bd$P4)
+labels <- c("Si", "No" )
+levels(bd$P4) <- labels
+# position: 19
+bd$P6 <- as.factor(bd$P6)
+labels <- c("Si", "No" )
+levels(bd$P6) <- labels
+# position: 20
+bd$P7 <- as.factor(bd$P7)
+labels <- c("NS/NR" )
+levels(bd$P7) <- labels
+# position: 22
+bd$P8 <- as.factor(bd$P8)
+labels <- c("Computadora de escritorio", "Computadora portátil", "Tablet", "NS/NR" )
+levels(bd$P8) <- labels
+# position: 24
+bd$P10 <- as.factor(bd$P10)
+labels <- c("Menos de una vez por semana", "No usa estos equipos" )
+levels(bd$P10) <- labels
+# position: 25
+bd$P11 <- as.factor(bd$P11)
+labels <- c("Herramienta de trabajo", "Escuchar música o ver videos", "Juegos", "Conectarse a Internet", "Estudio", "Otro" )
+levels(bd$P11) <- labels
+# position: 26
+bd$P11 <- as.factor(bd$P11)
+labels <- c("Herramienta de trabajo", "Escuchar música o ver videos", "Juegos", "Conectarse a Internet", "Estudio", "Otro" )
+levels(bd$P11) <- labels
+# position: 27
+bd$P11 <- as.factor(bd$P11)
+labels <- c("Herramienta de trabajo", "Escuchar música o ver videos", "Juegos", "Conectarse a Internet", "Estudio", "Otro" )
+levels(bd$P11) <- labels
+# position: 28
+bd$P11 <- as.factor(bd$P11)
+labels <- c("Herramienta de trabajo", "Escuchar música o ver videos", "Juegos", "Conectarse a Internet", "Estudio", "Otro" )
+levels(bd$P11) <- labels
+# position: 30
+bd$P12 <- as.factor(bd$P12)
+labels <- c("Si", "No" )
+levels(bd$P12) <- labels
+# position: 31
+bd$P13 <- as.factor(bd$P13)
+labels <- c("NS/NR" )
+levels(bd$P13) <- labels
+# position: 32
+bd$P13 <- as.factor(bd$P13)
+labels <- c("NS/NR" )
+levels(bd$P13) <- labels
+# position: 34
+bd$P15 <- as.factor(bd$P15)
+labels <- c("Noticias", "Deportes", "Salud y educación", "Entretenimiento (series, novelas, películas, farándula, moda, concursos)", "Otro", "No mira televisión" )
+levels(bd$P15) <- labels
+# position: 35
+bd$P15 <- as.factor(bd$P15)
+labels <- c("Noticias", "Deportes", "Salud y educación", "Entretenimiento (series, novelas, películas, farándula, moda, concursos)", "Otro", "No mira televisión" )
+levels(bd$P15) <- labels
+# position: 36
+bd$P15 <- as.factor(bd$P15)
+labels <- c("Noticias", "Deportes", "Salud y educación", "Entretenimiento (series, novelas, películas, farándula, moda, concursos)", "Otro", "No mira televisión" )
+levels(bd$P15) <- labels
+# position: 37
+bd$P15 <- as.factor(bd$P15)
+labels <- c("Noticias", "Deportes", "Salud y educación", "Entretenimiento (series, novelas, películas, farándula, moda, concursos)", "Otro", "No mira televisión" )
+levels(bd$P15) <- labels
+# position: 39
+bd$P16 <- as.factor(bd$P16)
+labels <- c("Si", "No" )
+levels(bd$P16) <- labels
+# position: 40
+bd$P17 <- as.factor(bd$P17)
+labels <- c("Si", "No" )
+levels(bd$P17) <- labels
+# position: 43
+bd$P20 <- as.factor(bd$P20)
+labels <- c("Si", "No" )
+levels(bd$P20) <- labels
+# position: 44
+bd$P21 <- as.factor(bd$P21)
+labels <- c("NS/NR" )
+levels(bd$P21) <- labels
+# position: 45
+bd$P21 <- as.factor(bd$P21)
+labels <- c("NS/NR" )
+levels(bd$P21) <- labels
+# position: 47
+bd$P23 <- as.factor(bd$P23)
+labels <- c("Internet fijo", "Módem", "Ninguno" )
+levels(bd$P23) <- labels
+# position: 49
+bd$P25 <- as.factor(bd$P25)
+labels <- c("128 kbps", "256 kbps", "512 kbps", "1 a 2 Mbps", "De + de 2 a 3 Mbps", "De + de 3 Mbps", "NS/NR" )
+levels(bd$P25) <- labels
+# position: 51
+bd$P27 <- as.factor(bd$P27)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Comprar, vender o permutar", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P27) <- labels
+# position: 53
+bd$P27 <- as.factor(bd$P27)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Comprar, vender o permutar", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P27) <- labels
+# position: 54
+bd$P27 <- as.factor(bd$P27)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Comprar, vender o permutar", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P27) <- labels
+# position: 55
+bd$P27 <- as.factor(bd$P27)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Comprar, vender o permutar", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P27) <- labels
+# position: 56
+bd$P27 <- as.factor(bd$P27)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Comprar, vender o permutar", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P27) <- labels
+# position: 58
+bd$P28 <- as.factor(bd$P28)
+labels <- c("Si", "No" )
+levels(bd$P28) <- labels
+# position: 63
+bd$P31 <- as.factor(bd$P31)
+labels <- c("Llamadas telefónicas", "Mensajes de texto SMS", "Escuchar música", "Ver videos", "Juegos", "Conectarse a Internet", "Sacar fotos", "Otro" )
+levels(bd$P31) <- labels
+# position: 64
+bd$P31 <- as.factor(bd$P31)
+labels <- c("Llamadas telefónicas", "Mensajes de texto SMS", "Escuchar música", "Ver videos", "Juegos", "Conectarse a Internet", "Sacar fotos", "Otro" )
+levels(bd$P31) <- labels
+# position: 65
+bd$P31 <- as.factor(bd$P31)
+labels <- c("Llamadas telefónicas", "Mensajes de texto SMS", "Escuchar música", "Ver videos", "Juegos", "Conectarse a Internet", "Sacar fotos", "Otro" )
+levels(bd$P31) <- labels
+# position: 66
+bd$P31 <- as.factor(bd$P31)
+labels <- c("Llamadas telefónicas", "Mensajes de texto SMS", "Escuchar música", "Ver videos", "Juegos", "Conectarse a Internet", "Sacar fotos", "Otro" )
+levels(bd$P31) <- labels
+# position: 67
+bd$P31 <- as.factor(bd$P31)
+labels <- c("Llamadas telefónicas", "Mensajes de texto SMS", "Escuchar música", "Ver videos", "Juegos", "Conectarse a Internet", "Sacar fotos", "Otro" )
+levels(bd$P31) <- labels
+# position: 68
+bd$P31 <- as.factor(bd$P31)
+labels <- c("Llamadas telefónicas", "Mensajes de texto SMS", "Escuchar música", "Ver videos", "Juegos", "Conectarse a Internet", "Sacar fotos", "Otro" )
+levels(bd$P31) <- labels
+# position: 70
+bd$P32 <- as.factor(bd$P32)
+labels <- c("Prepago", "Pospago", "Ambos" )
+levels(bd$P32) <- labels
+# position: 71
+bd$P33 <- as.factor(bd$P33)
+labels <- c("Tigo", "Entel", "Viva", "Mio (Comteco)" )
+levels(bd$P33) <- labels
+# position: 74
+bd$P36 <- as.factor(bd$P36)
+labels <- c("Android", "IOS (iPhone)", "Windows", "Otro", "NS/NR" )
+levels(bd$P36) <- labels
+# position: 76
+bd$P37 <- as.factor(bd$P37)
+labels <- c("Si", "No" )
+levels(bd$P37) <- labels
+# position: 79
+bd$P39 <- as.factor(bd$P39)
+labels <- c("Día", "Semana", "Mes" )
+levels(bd$P39) <- labels
+# position: 81
+bd$P41 <- as.factor(bd$P41)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P41) <- labels
+# position: 82
+bd$P41 <- as.factor(bd$P41)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P41) <- labels
+# position: 83
+bd$P41 <- as.factor(bd$P41)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P41) <- labels
+# position: 84
+bd$P41 <- as.factor(bd$P41)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P41) <- labels
+# position: 85
+bd$P41 <- as.factor(bd$P41)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P41) <- labels
+# position: 86
+bd$P41 <- as.factor(bd$P41)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P41) <- labels
+# position: 87
+bd$P41 <- as.factor(bd$P41)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P41) <- labels
+# position: 88
+bd$P41 <- as.factor(bd$P41)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P41) <- labels
+# position: 89
+bd$P41 <- as.factor(bd$P41)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P41) <- labels
+# position: 91
+bd$P42 <- as.factor(bd$P42)
+labels <- c("En el trabajo", "En el Colegio", "En la Universidad", "Telecentro", "Cafe Internet", "Restaurantes, cafes", "Espacios públicos", "Casa de amigos/familiares", "Otro", "Ninguno" )
+levels(bd$P42) <- labels
+# position: 92
+bd$P42 <- as.factor(bd$P42)
+labels <- c("En el trabajo", "En el Colegio", "En la Universidad", "Telecentro", "Cafe Internet", "Restaurantes, cafes", "Espacios públicos", "Casa de amigos/familiares", "Otro", "Ninguno" )
+levels(bd$P42) <- labels
+# position: 93
+bd$P42 <- as.factor(bd$P42)
+labels <- c("En el trabajo", "En el Colegio", "En la Universidad", "Telecentro", "Cafe Internet", "Restaurantes, cafes", "Espacios públicos", "Casa de amigos/familiares", "Otro", "Ninguno" )
+levels(bd$P42) <- labels
+# position: 94
+bd$P42 <- as.factor(bd$P42)
+labels <- c("En el trabajo", "En el Colegio", "En la Universidad", "Telecentro", "Cafe Internet", "Restaurantes, cafes", "Espacios públicos", "Casa de amigos/familiares", "Otro", "Ninguno" )
+levels(bd$P42) <- labels
+# position: 95
+bd$P42 <- as.factor(bd$P42)
+labels <- c("En el trabajo", "En el Colegio", "En la Universidad", "Telecentro", "Cafe Internet", "Restaurantes, cafes", "Espacios públicos", "Casa de amigos/familiares", "Otro", "Ninguno" )
+levels(bd$P42) <- labels
+# position: 146
+bd$P46 <- as.factor(bd$P46)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P46) <- labels
+# position: 147
+bd$P46 <- as.factor(bd$P46)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P46) <- labels
+# position: 148
+bd$P46 <- as.factor(bd$P46)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P46) <- labels
+# position: 149
+bd$P46 <- as.factor(bd$P46)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P46) <- labels
+# position: 150
+bd$P46 <- as.factor(bd$P46)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P46) <- labels
+# position: 151
+bd$P46 <- as.factor(bd$P46)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P46) <- labels
+# position: 152
+bd$P46 <- as.factor(bd$P46)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P46) <- labels
+# position: 153
+bd$P46 <- as.factor(bd$P46)
+labels <- c("Contactar amigos o familiares", "Buscar información", "Compras en Internet", "Fines académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Escuchar música o ver videos", "Redes sociales", "Correo electrónico", "Otro" )
+levels(bd$P46) <- labels
+# position: 155
+bd$P47 <- as.factor(bd$P47)
+labels <- c("Noticias (periódicos, etc.)", "Oferta de bienes o servicios", "Oportunidades laborales", "Servicios de salud", "Ciencia y/o tecnología", "Servicios del gobierno", "Entretenimiento/farándula", "Turismo", "Educativa", "Negocios", "Política", "Arte y cultura", "Otro" )
+levels(bd$P47) <- labels
+# position: 156
+bd$P47 <- as.factor(bd$P47)
+labels <- c("Noticias (periódicos, etc.)", "Oferta de bienes o servicios", "Oportunidades laborales", "Servicios de salud", "Ciencia y/o tecnología", "Servicios del gobierno", "Entretenimiento/farándula", "Turismo", "Educativa", "Negocios", "Política", "Arte y cultura", "Otro" )
+levels(bd$P47) <- labels
+# position: 157
+bd$P47 <- as.factor(bd$P47)
+labels <- c("Noticias (periódicos, etc.)", "Oferta de bienes o servicios", "Oportunidades laborales", "Servicios de salud", "Ciencia y/o tecnología", "Servicios del gobierno", "Entretenimiento/farándula", "Turismo", "Educativa", "Negocios", "Política", "Arte y cultura", "Otro" )
+levels(bd$P47) <- labels
+# position: 158
+bd$P47 <- as.factor(bd$P47)
+labels <- c("Noticias (periódicos, etc.)", "Oferta de bienes o servicios", "Oportunidades laborales", "Servicios de salud", "Ciencia y/o tecnología", "Servicios del gobierno", "Entretenimiento/farándula", "Turismo", "Educativa", "Negocios", "Política", "Arte y cultura", "Otro" )
+levels(bd$P47) <- labels
+# position: 159
+bd$P47 <- as.factor(bd$P47)
+labels <- c("Noticias (periódicos, etc.)", "Oferta de bienes o servicios", "Oportunidades laborales", "Servicios de salud", "Ciencia y/o tecnología", "Servicios del gobierno", "Entretenimiento/farándula", "Turismo", "Educativa", "Negocios", "Política", "Arte y cultura", "Otro" )
+levels(bd$P47) <- labels
+# position: 160
+bd$P47 <- as.factor(bd$P47)
+labels <- c("Noticias (periódicos, etc.)", "Oferta de bienes o servicios", "Oportunidades laborales", "Servicios de salud", "Ciencia y/o tecnología", "Servicios del gobierno", "Entretenimiento/farándula", "Turismo", "Educativa", "Negocios", "Política", "Arte y cultura", "Otro" )
+levels(bd$P47) <- labels
+# position: 161
+bd$P47 <- as.factor(bd$P47)
+labels <- c("Noticias (periódicos, etc.)", "Oferta de bienes o servicios", "Oportunidades laborales", "Servicios de salud", "Ciencia y/o tecnología", "Servicios del gobierno", "Entretenimiento/farándula", "Turismo", "Educativa", "Negocios", "Política", "Arte y cultura", "Otro" )
+levels(bd$P47) <- labels
+# position: 162
+bd$P47 <- as.factor(bd$P47)
+labels <- c("Noticias (periódicos, etc.)", "Oferta de bienes o servicios", "Oportunidades laborales", "Servicios de salud", "Ciencia y/o tecnología", "Servicios del gobierno", "Entretenimiento/farándula", "Turismo", "Educativa", "Negocios", "Política", "Arte y cultura", "Otro" )
+levels(bd$P47) <- labels
+# position: 170
+bd$P50 <- as.factor(bd$P50)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P50) <- labels
+# position: 171
+bd$P51 <- as.factor(bd$P51)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P51) <- labels
+# position: 172
+bd$P52 <- as.factor(bd$P52)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P52) <- labels
+# position: 173
+bd$P53 <- as.factor(bd$P53)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P53) <- labels
+# position: 174
+bd$P54 <- as.factor(bd$P54)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P54) <- labels
+# position: 175
+bd$P55 <- as.factor(bd$P55)
+labels <- c("Claridad de la información", "Privacidad", "Trato cordial", "Rapidez", "Cantidad de requisitos", "Otro", "NS/NR" )
+levels(bd$P55) <- labels
+# position: 179
+bd$P58 <- as.factor(bd$P58)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P58) <- labels
+# position: 180
+bd$P58 <- as.factor(bd$P58)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P58) <- labels
+# position: 181
+bd$P59 <- as.factor(bd$P59)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P59) <- labels
+# position: 182
+bd$P58 <- as.factor(bd$P58)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P58) <- labels
+# position: 183
+bd$P60 <- as.factor(bd$P60)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P60) <- labels
+# position: 184
+bd$P58 <- as.factor(bd$P58)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P58) <- labels
+# position: 185
+bd$P61 <- as.factor(bd$P61)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P61) <- labels
+# position: 186
+bd$P58 <- as.factor(bd$P58)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P58) <- labels
+# position: 187
+bd$P62 <- as.factor(bd$P62)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P62) <- labels
+# position: 188
+bd$P58 <- as.factor(bd$P58)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P58) <- labels
+# position: 189
+bd$P63 <- as.factor(bd$P63)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P63) <- labels
+# position: 190
+bd$P63 <- as.factor(bd$P63)
+labels <- c("Si", "No", "NS/NR" )
+levels(bd$P63) <- labels
+# position: 191
+bd$P64 <- as.factor(bd$P64)
+labels <- c("Datos estadísticos", "Información general sobre la institución y su organización interna", "Actividades y proyectos de la institución", "Libros, memorias, boletines y otras publicaciones", "Requerimiento de personal", "Compras y contrataciones", "Trómites y requisitos", "Auditoría interna", "Información sobre las actividades de las autoridades", "Normativas que rigen las funciones de la entidad", "Otro", "NS/NR" )
+levels(bd$P64) <- labels
+# position: 192
+bd$P64 <- as.factor(bd$P64)
+labels <- c("Datos estadísticos", "Información general sobre la institución y su organización interna", "Actividades y proyectos de la institución", "Libros, memorias, boletines y otras publicaciones", "Requerimiento de personal", "Compras y contrataciones", "Trómites y requisitos", "Auditoría interna", "Información sobre las actividades de las autoridades", "Normativas que rigen las funciones de la entidad", "Otro", "NS/NR" )
+levels(bd$P64) <- labels
+# position: 193
+bd$P64 <- as.factor(bd$P64)
+labels <- c("Datos estadísticos", "Información general sobre la institución y su organización interna", "Actividades y proyectos de la institución", "Libros, memorias, boletines y otras publicaciones", "Requerimiento de personal", "Compras y contrataciones", "Trómites y requisitos", "Auditoría interna", "Información sobre las actividades de las autoridades", "Normativas que rigen las funciones de la entidad", "Otro", "NS/NR" )
+levels(bd$P64) <- labels
+# position: 194
+bd$P64 <- as.factor(bd$P64)
+labels <- c("Datos estadísticos", "Información general sobre la institución y su organización interna", "Actividades y proyectos de la institución", "Libros, memorias, boletines y otras publicaciones", "Requerimiento de personal", "Compras y contrataciones", "Trómites y requisitos", "Auditoría interna", "Información sobre las actividades de las autoridades", "Normativas que rigen las funciones de la entidad", "Otro", "NS/NR" )
+levels(bd$P64) <- labels
+# position: 197
+bd$P66 <- as.factor(bd$P66)
+labels <- c("Sí", "No" )
+levels(bd$P66) <- labels
+# position: 207
+bd$P71 <- as.factor(bd$P71)
+labels <- c("En línea", "Presencial" )
+levels(bd$P71) <- labels
+# position: 208
+bd$P72 <- as.factor(bd$P72)
+labels <- c("Es más cómodo", "Permite profundizar en la materia", "Se acomoda a mis horarios", "Tiene mayor validez", "Me ahorra tiempo", "Se aprende mejor", "Otro", "NS/NR" )
+levels(bd$P72) <- labels
+# position: 209
+bd$P72 <- as.factor(bd$P72)
+labels <- c("Es más cómodo", "Permite profundizar en la materia", "Se acomoda a mis horarios", "Tiene mayor validez", "Me ahorra tiempo", "Se aprende mejor", "Otro", "NS/NR" )
+levels(bd$P72) <- labels
+# position: 210
+bd$P72 <- as.factor(bd$P72)
+labels <- c("Es más cómodo", "Permite profundizar en la materia", "Se acomoda a mis horarios", "Tiene mayor validez", "Me ahorra tiempo", "Se aprende mejor", "Otro", "NS/NR" )
+levels(bd$P72) <- labels
+# position: 211
+bd$P72 <- as.factor(bd$P72)
+labels <- c("Es más cómodo", "Permite profundizar en la materia", "Se acomoda a mis horarios", "Tiene mayor validez", "Me ahorra tiempo", "Se aprende mejor", "Otro", "NS/NR" )
+levels(bd$P72) <- labels
+# position: 212
+bd$P72 <- as.factor(bd$P72)
+labels <- c("Es más cómodo", "Permite profundizar en la materia", "Se acomoda a mis horarios", "Tiene mayor validez", "Me ahorra tiempo", "Se aprende mejor", "Otro", "NS/NR" )
+levels(bd$P72) <- labels
+# position: 214
+bd$P73 <- as.factor(bd$P73)
+labels <- c("Si", "No" )
+levels(bd$P73) <- labels
+# position: 215
+bd$P74 <- as.factor(bd$P74)
+labels <- c("Mucho", "Más o menos", "Muy poco", "No usa", "Otro" )
+levels(bd$P74) <- labels
+# position: 217
+bd$P75 <- as.factor(bd$P75)
+labels <- c("Si", "No" )
+levels(bd$P75) <- labels
+# position: 218
+bd$P76 <- as.factor(bd$P76)
+labels <- c("Si", "No" )
+levels(bd$P76) <- labels
+# position: 219
+bd$P77 <- as.factor(bd$P77)
+labels <- c("Si", "No" )
+levels(bd$P77) <- labels
+# position: 220
+bd$P78 <- as.factor(bd$P78)
+labels <- c("No poseo una tarjeta de débito o crédito", "No confío en las ofertas en Internet", "El costo del transporte y/o impuestos son altos", "No existen suficientes ofertas en/para Bolivia", "Pago elevado de comisiones", "Otro", "NS/NR" )
+levels(bd$P78) <- labels
+# position: 221
+bd$P78 <- as.factor(bd$P78)
+labels <- c("No poseo una tarjeta de débito o crédito", "No confío en las ofertas en Internet", "El costo del transporte y/o impuestos son altos", "No existen suficientes ofertas en/para Bolivia", "Pago elevado de comisiones", "Otro", "NS/NR" )
+levels(bd$P78) <- labels
+# position: 222
+bd$P78 <- as.factor(bd$P78)
+labels <- c("No poseo una tarjeta de débito o crédito", "No confío en las ofertas en Internet", "El costo del transporte y/o impuestos son altos", "No existen suficientes ofertas en/para Bolivia", "Pago elevado de comisiones", "Otro", "NS/NR" )
+levels(bd$P78) <- labels
+# position: 224
+bd$P79 <- as.factor(bd$P79)
+labels <- c("Nacionales", "Internacionales", "Ambas" )
+levels(bd$P79) <- labels
+# position: 225
+bd$P80 <- as.factor(bd$P80)
+labels <- c("Facebook", "Whatsapp", "Sitios web", "Plataforma de compra/venta (Amazon/ebay)", "Otro", "NS/NR" )
+levels(bd$P80) <- labels
+# position: 226
+bd$P80 <- as.factor(bd$P80)
+labels <- c("Facebook", "Whatsapp", "Sitios web", "Plataforma de compra/venta (Amazon/ebay)", "Otro", "NS/NR" )
+levels(bd$P80) <- labels
+# position: 227
+bd$P80 <- as.factor(bd$P80)
+labels <- c("Facebook", "Whatsapp", "Sitios web", "Plataforma de compra/venta (Amazon/ebay)", "Otro", "NS/NR" )
+levels(bd$P80) <- labels
+# position: 229
+bd$P81 <- as.factor(bd$P81)
+labels <- c("Tarjeta de crédito propia", "Tarjeta de crédito de amigo/familiar", "Tarjeta de débito", "Paypal", "Billetera electrónica", "Dep^sito/giro", "Pago en efectivo", "Otro" )
+levels(bd$P81) <- labels
+# position: 230
+bd$P81 <- as.factor(bd$P81)
+labels <- c("Tarjeta de crédito propia", "Tarjeta de crédito de amigo/familiar", "Tarjeta de débito", "Paypal", "Billetera electrónica", "Dep^sito/giro", "Pago en efectivo", "Otro" )
+levels(bd$P81) <- labels
+# position: 231
+bd$P81 <- as.factor(bd$P81)
+labels <- c("Tarjeta de crédito propia", "Tarjeta de crédito de amigo/familiar", "Tarjeta de débito", "Paypal", "Billetera electrónica", "Dep^sito/giro", "Pago en efectivo", "Otro" )
+levels(bd$P81) <- labels
+# position: 233
+bd$P82 <- as.factor(bd$P82)
+labels <- c("Equipos electrónicos", "Libros físicos/electrónicos", "Viajes (pasajes, hoteles)", "Entradas a eventos", "Cursos", "Ropa y accesorios", "Artículos para el hogar", "Artículos para el cuidado personal", "Software", "Juegos", "Música o películas", "Servicios de streaming (netflix, spotify)", "Pago de anuncios publicitarios", "Servicios de hosting y dominio", "Otro" )
+levels(bd$P82) <- labels
+# position: 234
+bd$P82 <- as.factor(bd$P82)
+labels <- c("Equipos electrónicos", "Libros físicos/electrónicos", "Viajes (pasajes, hoteles)", "Entradas a eventos", "Cursos", "Ropa y accesorios", "Artículos para el hogar", "Artículos para el cuidado personal", "Software", "Juegos", "Música o películas", "Servicios de streaming (netflix, spotify)", "Pago de anuncios publicitarios", "Servicios de hosting y dominio", "Otro" )
+levels(bd$P82) <- labels
+# position: 235
+bd$P82 <- as.factor(bd$P82)
+labels <- c("Equipos electrónicos", "Libros físicos/electrónicos", "Viajes (pasajes, hoteles)", "Entradas a eventos", "Cursos", "Ropa y accesorios", "Artículos para el hogar", "Artículos para el cuidado personal", "Software", "Juegos", "Música o películas", "Servicios de streaming (netflix, spotify)", "Pago de anuncios publicitarios", "Servicios de hosting y dominio", "Otro" )
+levels(bd$P82) <- labels
+# position: 237
+bd$P83 <- as.factor(bd$P83)
+labels <- c("Casa/oficina", "Punto de encuentro", "Establecimiento/tienda", "Oficina de correos", "Otro" )
+levels(bd$P83) <- labels
+# position: 238
+bd$P83 <- as.factor(bd$P83)
+labels <- c("Casa/oficina", "Punto de encuentro", "Establecimiento/tienda", "Oficina de correos", "Otro" )
+levels(bd$P83) <- labels
+# position: 239
+bd$P83 <- as.factor(bd$P83)
+labels <- c("Casa/oficina", "Punto de encuentro", "Establecimiento/tienda", "Oficina de correos", "Otro" )
+levels(bd$P83) <- labels
+# position: 242
+bd$P85 <- as.factor(bd$P85)
+labels <- c("Falta de tiempo", "No existe el producto localmente", "Mejor precio", "Guardar anonimato", "Prefiero hacer mis compras en línea", "Comodidad", "Otro" )
+levels(bd$P85) <- labels
+# position: 243
+bd$P85 <- as.factor(bd$P85)
+labels <- c("Falta de tiempo", "No existe el producto localmente", "Mejor precio", "Guardar anonimato", "Prefiero hacer mis compras en línea", "Comodidad", "Otro" )
+levels(bd$P85) <- labels
+# position: 244
+bd$P85 <- as.factor(bd$P85)
+labels <- c("Falta de tiempo", "No existe el producto localmente", "Mejor precio", "Guardar anonimato", "Prefiero hacer mis compras en línea", "Comodidad", "Otro" )
+levels(bd$P85) <- labels
+# position: 246
+bd$P86 <- as.factor(bd$P86)
+labels <- c("Si", "No" )
+levels(bd$P86) <- labels
+# position: 247
+bd$P87 <- as.factor(bd$P87)
+labels <- c("Local", "Internacional", "Ambas" )
+levels(bd$P87) <- labels
+# position: 248
+bd$P88 <- as.factor(bd$P88)
+labels <- c("Facebook", "Whatsapp", "Sitios web", "Plataforma de compra/venta (ebay)", "Otro" )
+levels(bd$P88) <- labels
+# position: 249
+bd$P88 <- as.factor(bd$P88)
+labels <- c("Facebook", "Whatsapp", "Sitios web", "Plataforma de compra/venta (ebay)", "Otro" )
+levels(bd$P88) <- labels
+# position: 250
+bd$P88 <- as.factor(bd$P88)
+labels <- c("Facebook", "Whatsapp", "Sitios web", "Plataforma de compra/venta (ebay)", "Otro" )
+levels(bd$P88) <- labels
+# position: 252
+bd$P89 <- as.factor(bd$P89)
+labels <- c("Tarjeta de crédito", "Tarjeta de débito", "Paypal", "Billetera electrónica", "Pago en efectivo", "Depósito, giro", "Otro" )
+levels(bd$P89) <- labels
+# position: 253
+bd$P89 <- as.factor(bd$P89)
+labels <- c("Tarjeta de crédito", "Tarjeta de débito", "Paypal", "Billetera electrónica", "Pago en efectivo", "Depósito, giro", "Otro" )
+levels(bd$P89) <- labels
+# position: 254
+bd$P89 <- as.factor(bd$P89)
+labels <- c("Tarjeta de crédito", "Tarjeta de débito", "Paypal", "Billetera electrónica", "Pago en efectivo", "Depósito, giro", "Otro" )
+levels(bd$P89) <- labels
+# position: 256
+bd$P90 <- as.factor(bd$P90)
+labels <- c("Equipos electrónicos", "Libros", "Viajes (pasajes, hoteles)", "Cursos", "Ropa y accesorios", "Artículos para el hogar", "Artículos para el cuidado personal", "Software", "Juegos", "M^sica/películas", "Servicios de hosting y dominio", "Otro" )
+levels(bd$P90) <- labels
+# position: 257
+bd$P90 <- as.factor(bd$P90)
+labels <- c("Equipos electrónicos", "Libros", "Viajes (pasajes, hoteles)", "Cursos", "Ropa y accesorios", "Artículos para el hogar", "Artículos para el cuidado personal", "Software", "Juegos", "M^sica/películas", "Servicios de hosting y dominio", "Otro" )
+levels(bd$P90) <- labels
+# position: 258
+bd$P90 <- as.factor(bd$P90)
+labels <- c("Equipos electrónicos", "Libros", "Viajes (pasajes, hoteles)", "Cursos", "Ropa y accesorios", "Artículos para el hogar", "Artículos para el cuidado personal", "Software", "Juegos", "M^sica/películas", "Servicios de hosting y dominio", "Otro" )
+levels(bd$P90) <- labels
+# position: 260
+bd$P91 <- as.factor(bd$P91)
+labels <- c("En un punto de encuentro", "En una tienda perteneciente al negocio", "Env^a por correo o courrier", "Entrega a domicilio", "Otro" )
+levels(bd$P91) <- labels
+# position: 261
+bd$P91 <- as.factor(bd$P91)
+labels <- c("En un punto de encuentro", "En una tienda perteneciente al negocio", "Env^a por correo o courrier", "Entrega a domicilio", "Otro" )
+levels(bd$P91) <- labels
+# position: 262
+bd$P91 <- as.factor(bd$P91)
+labels <- c("En un punto de encuentro", "En una tienda perteneciente al negocio", "Env^a por correo o courrier", "Entrega a domicilio", "Otro" )
+levels(bd$P91) <- labels
+# position: 265
+bd$P93 <- as.factor(bd$P93)
+labels <- c("Mayor alcance de compradores", "Facilidad de administración", "Mejores precios", "Rapidez", "Anonimato", "Otro" )
+levels(bd$P93) <- labels
+# position: 266
+bd$P93 <- as.factor(bd$P93)
+labels <- c("Mayor alcance de compradores", "Facilidad de administración", "Mejores precios", "Rapidez", "Anonimato", "Otro" )
+levels(bd$P93) <- labels
+# position: 267
+bd$P93 <- as.factor(bd$P93)
+labels <- c("Mayor alcance de compradores", "Facilidad de administración", "Mejores precios", "Rapidez", "Anonimato", "Otro" )
+levels(bd$P93) <- labels
+# position: 269
+bd$P94 <- as.factor(bd$P94)
+labels <- c("Si", "No" )
+levels(bd$P94) <- labels
+# position: 270
+bd$P95 <- as.factor(bd$P95)
+labels <- c("Si", "No" )
+levels(bd$P95) <- labels
+# position: 271
+bd$P96 <- as.factor(bd$P96)
+labels <- c("Si", "No" )
+levels(bd$P96) <- labels
+# position: 272
+bd$P97 <- as.factor(bd$P97)
+labels <- c("Si", "No" )
+levels(bd$P97) <- labels
+# position: 273
+bd$P98 <- as.factor(bd$P98)
+labels <- c("Servicios de telefonía o Internet", "Luz, tv cable, agua", "Créditos bancarios", "Pasajes aéreos", "Entradas a espectáculos", "Estudios, pensión escolar", "Impuestos", "Otros" )
+levels(bd$P98) <- labels
+# position: 274
+bd$P98 <- as.factor(bd$P98)
+labels <- c("Servicios de telefonía o Internet", "Luz, tv cable, agua", "Créditos bancarios", "Pasajes aéreos", "Entradas a espectáculos", "Estudios, pensión escolar", "Impuestos", "Otros" )
+levels(bd$P98) <- labels
+# position: 275
+bd$P98 <- as.factor(bd$P98)
+labels <- c("Servicios de telefonía o Internet", "Luz, tv cable, agua", "Créditos bancarios", "Pasajes aéreos", "Entradas a espectáculos", "Estudios, pensión escolar", "Impuestos", "Otros" )
+levels(bd$P98) <- labels
+# position: 276
+bd$P98 <- as.factor(bd$P98)
+labels <- c("Servicios de telefonía o Internet", "Luz, tv cable, agua", "Créditos bancarios", "Pasajes aéreos", "Entradas a espectáculos", "Estudios, pensión escolar", "Impuestos", "Otros" )
+levels(bd$P98) <- labels
+# position: 278
+bd$P99 <- as.factor(bd$P99)
+labels <- c("Si", "No" )
+levels(bd$P99) <- labels
+# position: 279
+bd$P100 <- as.factor(bd$P100)
+labels <- c("Facebook", "Twitter", "Whatsapp", "Telegram", "Instagram", "Youtube", "Skype", "Snapchat", "Line", "Otra" )
+levels(bd$P100) <- labels
+# position: 280
+bd$P100 <- as.factor(bd$P100)
+labels <- c("Facebook", "Twitter", "Whatsapp", "Telegram", "Instagram", "Youtube", "Skype", "Snapchat", "Line", "Otra" )
+levels(bd$P100) <- labels
+# position: 281
+bd$P100 <- as.factor(bd$P100)
+labels <- c("Facebook", "Twitter", "Whatsapp", "Telegram", "Instagram", "Youtube", "Skype", "Snapchat", "Line", "Otra" )
+levels(bd$P100) <- labels
+# position: 282
+bd$P100 <- as.factor(bd$P100)
+labels <- c("Facebook", "Twitter", "Whatsapp", "Telegram", "Instagram", "Youtube", "Skype", "Snapchat", "Line", "Otra" )
+levels(bd$P100) <- labels
+# position: 283
+bd$P100 <- as.factor(bd$P100)
+labels <- c("Facebook", "Twitter", "Whatsapp", "Telegram", "Instagram", "Youtube", "Skype", "Snapchat", "Line", "Otra" )
+levels(bd$P100) <- labels
+# position: 284
+bd$P100 <- as.factor(bd$P100)
+labels <- c("Facebook", "Twitter", "Whatsapp", "Telegram", "Instagram", "Youtube", "Skype", "Snapchat", "Line", "Otra" )
+levels(bd$P100) <- labels
+# position: 285
+bd$P100 <- as.factor(bd$P100)
+labels <- c("Facebook", "Twitter", "Whatsapp", "Telegram", "Instagram", "Youtube", "Skype", "Snapchat", "Line", "Otra" )
+levels(bd$P100) <- labels
+# position: 286
+bd$P100 <- as.factor(bd$P100)
+labels <- c("Facebook", "Twitter", "Whatsapp", "Telegram", "Instagram", "Youtube", "Skype", "Snapchat", "Line", "Otra" )
+levels(bd$P100) <- labels
+# position: 288
+bd$P101 <- as.factor(bd$P101)
+labels <- c("Conectarse con amigos/familiares", "Conocer gente", "Informarse sobre temas políticos", "Informarse de otras noticias", "Compartir contenidos (noticias, memes, links, mensajes)", "Participar en debates", "Ver videos/fotos", "Hacer negocios", "Apoyar alguna causa o demanda social", "Comprar o vender productos", "Seguir cuentas o paginas", "Otro" )
+levels(bd$P101) <- labels
+# position: 289
+bd$P101 <- as.factor(bd$P101)
+labels <- c("Conectarse con amigos/familiares", "Conocer gente", "Informarse sobre temas políticos", "Informarse de otras noticias", "Compartir contenidos (noticias, memes, links, mensajes)", "Participar en debates", "Ver videos/fotos", "Hacer negocios", "Apoyar alguna causa o demanda social", "Comprar o vender productos", "Seguir cuentas o paginas", "Otro" )
+levels(bd$P101) <- labels
+# position: 290
+bd$P101 <- as.factor(bd$P101)
+labels <- c("Conectarse con amigos/familiares", "Conocer gente", "Informarse sobre temas políticos", "Informarse de otras noticias", "Compartir contenidos (noticias, memes, links, mensajes)", "Participar en debates", "Ver videos/fotos", "Hacer negocios", "Apoyar alguna causa o demanda social", "Comprar o vender productos", "Seguir cuentas o paginas", "Otro" )
+levels(bd$P101) <- labels
+# position: 291
+bd$P101 <- as.factor(bd$P101)
+labels <- c("Conectarse con amigos/familiares", "Conocer gente", "Informarse sobre temas políticos", "Informarse de otras noticias", "Compartir contenidos (noticias, memes, links, mensajes)", "Participar en debates", "Ver videos/fotos", "Hacer negocios", "Apoyar alguna causa o demanda social", "Comprar o vender productos", "Seguir cuentas o paginas", "Otro" )
+levels(bd$P101) <- labels
+# position: 326
+bd$P105 <- as.factor(bd$P105)
+labels <- c("Si", "No" )
+levels(bd$P105) <- labels
+# position: 327
+bd$P106 <- as.factor(bd$P106)
+labels <- c("Ecologista", "Derechos humanos", "Derechos de los animales", "Derechos de las mujeres", "Campaña electoral", "Otro" )
+levels(bd$P106) <- labels
+# position: 328
+bd$P106 <- as.factor(bd$P106)
+labels <- c("Ecologista", "Derechos humanos", "Derechos de los animales", "Derechos de las mujeres", "Campaña electoral", "Otro" )
+levels(bd$P106) <- labels
+# position: 329
+bd$P106 <- as.factor(bd$P106)
+labels <- c("Ecologista", "Derechos humanos", "Derechos de los animales", "Derechos de las mujeres", "Campaña electoral", "Otro" )
+levels(bd$P106) <- labels
+# position: 331
+bd$P107 <- as.factor(bd$P107)
+labels <- c("Amigos", "Familia", "Compañeros de trabajo/estudio", "Público en general", "Periodistas", "Organizaciones políticas", "Gobierno", "No influyen", "Otro" )
+levels(bd$P107) <- labels
+# position: 332
+bd$P107 <- as.factor(bd$P107)
+labels <- c("Amigos", "Familia", "Compañeros de trabajo/estudio", "Público en general", "Periodistas", "Organizaciones políticas", "Gobierno", "No influyen", "Otro" )
+levels(bd$P107) <- labels
+# position: 333
+bd$P107 <- as.factor(bd$P107)
+labels <- c("Amigos", "Familia", "Compañeros de trabajo/estudio", "Público en general", "Periodistas", "Organizaciones políticas", "Gobierno", "No influyen", "Otro" )
+levels(bd$P107) <- labels
+# position: 336
+bd$P108 <- as.factor(bd$P108)
+labels <- c("Mucho", "Más o menos", "Poco", "No confía", "NS/NR" )
+levels(bd$P108) <- labels
+# position: 337
+bd$P109 <- as.factor(bd$P109)
+labels <- c("Si", "No" )
+levels(bd$P109) <- labels
+# position: 338
+bd$P110 <- as.factor(bd$P110)
+labels <- c("Si", "No" )
+levels(bd$P110) <- labels
+# position: 339
+bd$P111 <- as.factor(bd$P111)
+labels <- c("Mucho", "Más o menos", "Poco", "No influyó", "Otro" )
+levels(bd$P111) <- labels
+# position: 341
+bd$P112 <- as.factor(bd$P112)
+labels <- c("Sí", "No", "NS/NR" )
+levels(bd$P112) <- labels
+# position: 342
+bd$P113 <- as.factor(bd$P113)
+labels <- c("Sí", "No" )
+levels(bd$P113) <- labels
+# position: 345
+bd$P115 <- as.factor(bd$P115)
+labels <- c("Amistad", "Relación amorosa", "Laboral", "Política", "Otro" )
+levels(bd$P115) <- labels
+# position: 346
+bd$P115 <- as.factor(bd$P115)
+labels <- c("Amistad", "Relación amorosa", "Laboral", "Política", "Otro" )
+levels(bd$P115) <- labels
+# position: 347
+bd$P115 <- as.factor(bd$P115)
+labels <- c("Amistad", "Relación amorosa", "Laboral", "Política", "Otro" )
+levels(bd$P115) <- labels
+# position: 349
+bd$P116 <- as.factor(bd$P116)
+labels <- c("Si", "No" )
+levels(bd$P116) <- labels
+# position: 350
+bd$P117 <- as.factor(bd$P117)
+labels <- c("Si", "No" )
+levels(bd$P117) <- labels
+# position: 351
+bd$P118 <- as.factor(bd$P118)
+labels <- c("Videojuegos", "Animé, manga o comics", "Software libre", "Tecnología", "Actividades políticas", "Cultura", "Actividad profesional o de estudio", "Deportes", "Educación", "Ecología/ medio ambiente", "Música", "Otros" )
+levels(bd$P118) <- labels
+# position: 352
+bd$P118 <- as.factor(bd$P118)
+labels <- c("Videojuegos", "Animé, manga o comics", "Software libre", "Tecnología", "Actividades políticas", "Cultura", "Actividad profesional o de estudio", "Deportes", "Educación", "Ecología/ medio ambiente", "Música", "Otros" )
+levels(bd$P118) <- labels
+# position: 353
+bd$P118 <- as.factor(bd$P118)
+labels <- c("Videojuegos", "Animé, manga o comics", "Software libre", "Tecnología", "Actividades políticas", "Cultura", "Actividad profesional o de estudio", "Deportes", "Educación", "Ecología/ medio ambiente", "Música", "Otros" )
+levels(bd$P118) <- labels
+# position: 354
+bd$P118 <- as.factor(bd$P118)
+labels <- c("Videojuegos", "Animé, manga o comics", "Software libre", "Tecnología", "Actividades políticas", "Cultura", "Actividad profesional o de estudio", "Deportes", "Educación", "Ecología/ medio ambiente", "Música", "Otros" )
+levels(bd$P118) <- labels
+# position: 355
+bd$P118 <- as.factor(bd$P118)
+labels <- c("Videojuegos", "Animé, manga o comics", "Software libre", "Tecnología", "Actividades políticas", "Cultura", "Actividad profesional o de estudio", "Deportes", "Educación", "Ecología/ medio ambiente", "Música", "Otros" )
+levels(bd$P118) <- labels
+# position: 356
+bd$P118 <- as.factor(bd$P118)
+labels <- c("Videojuegos", "Animé, manga o comics", "Software libre", "Tecnología", "Actividades políticas", "Cultura", "Actividad profesional o de estudio", "Deportes", "Educación", "Ecología/ medio ambiente", "Música", "Otros" )
+levels(bd$P118) <- labels
+# position: 358
+bd$P118 <- as.factor(bd$P118)
+labels <- c("Videojuegos", "Animé, manga o comics", "Software libre", "Tecnología", "Actividades políticas", "Cultura", "Actividad profesional o de estudio", "Deportes", "Educación", "Ecología/ medio ambiente", "Música", "Otros" )
+levels(bd$P118) <- labels
+# position: 360
+bd$P119 <- as.factor(bd$P119)
+labels <- c("Menos de 1 vez" )
+levels(bd$P119) <- labels
+# position: 361
+bd$P120 <- as.factor(bd$P120)
+labels <- c("Si", "No" )
+levels(bd$P120) <- labels
+# position: 362
+bd$P121 <- as.factor(bd$P121)
+labels <- c("Correo electrónico", "Facebook", "Whatsapp", "Telegram", "Twitter", "Sitios web", "Otro" )
+levels(bd$P121) <- labels
+# position: 363
+bd$P121 <- as.factor(bd$P121)
+labels <- c("Correo electrónico", "Facebook", "Whatsapp", "Telegram", "Twitter", "Sitios web", "Otro" )
+levels(bd$P121) <- labels
+# position: 364
+bd$P121 <- as.factor(bd$P121)
+labels <- c("Correo electrónico", "Facebook", "Whatsapp", "Telegram", "Twitter", "Sitios web", "Otro" )
+levels(bd$P121) <- labels
+# position: 365
+bd$P121 <- as.factor(bd$P121)
+labels <- c("Correo electrónico", "Facebook", "Whatsapp", "Telegram", "Twitter", "Sitios web", "Otro" )
+levels(bd$P121) <- labels
+# position: 366
+bd$P121 <- as.factor(bd$P121)
+labels <- c("Correo electrónico", "Facebook", "Whatsapp", "Telegram", "Twitter", "Sitios web", "Otro" )
+levels(bd$P121) <- labels
+# position: 367
+bd$P121 <- as.factor(bd$P121)
+labels <- c("Correo electrónico", "Facebook", "Whatsapp", "Telegram", "Twitter", "Sitios web", "Otro" )
+levels(bd$P121) <- labels
+# position: 369
+bd$P122 <- as.factor(bd$P122)
+labels <- c("Si", "No" )
+levels(bd$P122) <- labels
+# position: 371
+bd$P124 <- as.factor(bd$P124)
+labels <- c("No realiza actividad", "NS/NR" )
+levels(bd$P124) <- labels
+# position: 372
+bd$P124 <- as.factor(bd$P124)
+labels <- c("No realiza actividad", "NS/NR" )
+levels(bd$P124) <- labels
+# position: 373
+bd$P124 <- as.factor(bd$P124)
+labels <- c("No realiza actividad", "NS/NR" )
+levels(bd$P124) <- labels
+# position: 374
+bd$P124 <- as.factor(bd$P124)
+labels <- c("No realiza actividad", "NS/NR" )
+levels(bd$P124) <- labels
+# position: 375
+bd$P124 <- as.factor(bd$P124)
+labels <- c("No realiza actividad", "NS/NR" )
+levels(bd$P124) <- labels
+# position: 376
+bd$P125 <- as.factor(bd$P125)
+labels <- c("Si", "No" )
+levels(bd$P125) <- labels
+# position: 377
+bd$P126 <- as.factor(bd$P126)
+labels <- c("Mismo día", "Ns/Nr" )
+levels(bd$P126) <- labels
+# position: 378
+bd$P127 <- as.factor(bd$P127)
+labels <- c("Si", "No" )
+levels(bd$P127) <- labels
+# position: 379
+bd$P128 <- as.factor(bd$P128)
+labels <- c("Promocionar su actividad económica", "Compartir información", "Compartir música/videos", "Publicar artículos o actividades propias", "Otro" )
+levels(bd$P128) <- labels
+# position: 380
+bd$P128 <- as.factor(bd$P128)
+labels <- c("Promocionar su actividad económica", "Compartir información", "Compartir música/videos", "Publicar artículos o actividades propias", "Otro" )
+levels(bd$P128) <- labels
+# position: 381
+bd$P128 <- as.factor(bd$P128)
+labels <- c("Promocionar su actividad económica", "Compartir información", "Compartir música/videos", "Publicar artículos o actividades propias", "Otro" )
+levels(bd$P128) <- labels
+# position: 383
+bd$P129 <- as.factor(bd$P129)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P129) <- labels
+# position: 384
+bd$P129 <- as.factor(bd$P129)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P129) <- labels
+# position: 385
+bd$P129 <- as.factor(bd$P129)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P129) <- labels
+# position: 386
+bd$P130 <- as.factor(bd$P130)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P130) <- labels
+# position: 387
+bd$P130 <- as.factor(bd$P130)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P130) <- labels
+# position: 388
+bd$P130 <- as.factor(bd$P130)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P130) <- labels
+# position: 389
+bd$P131 <- as.factor(bd$P131)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P131) <- labels
+# position: 390
+bd$P131 <- as.factor(bd$P131)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P131) <- labels
+# position: 391
+bd$P131 <- as.factor(bd$P131)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P131) <- labels
+# position: 392
+bd$P132 <- as.factor(bd$P132)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P132) <- labels
+# position: 393
+bd$P132 <- as.factor(bd$P132)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P132) <- labels
+# position: 394
+bd$P132 <- as.factor(bd$P132)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+levels(bd$P132) <- labels
+# position: 395
+bd$P133 <- as.factor(bd$P133)
+labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
