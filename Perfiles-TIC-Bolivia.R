@@ -1,19 +1,10 @@
----
-title: "Conglomerados TIC"
-author: "A. Paco & M. Vino"
-date: "August 3, 2018"
-output:
-  pdf_document: default
-  html_document: default
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Perfiles TIC Bolivia 
+# ¿Qué y cómo ? Un enfoque de conglomerados para el caso boliviano
+" Marco Antonio Vino Chipana & Ayar Yuman Paco Sanizo" 
 
 
-```{r echo= FALSE}
-# Importando librerias 
+############ Importando librerias ###############
+
 library(readxl)
 library(readr)
 library(ggplot2)
@@ -24,18 +15,32 @@ library(grid)
 library(gridExtra)
 require(data.table)
 
-```
 
-# El contexto latinoamericano
-# Separación lineal Vs. Clusters (Segmetanción de mercados)
 
-# La encuesta
+############ Importando la base de datos  #####################
 
-```{r cars echo= FALSE}
 bd <- read_delim("bases de datos/base-5536-bdfinalcorregido.csv", 
-     ";", escape_double = FALSE, trim_ws = TRUE)
-```
-```{r}
+                 ";", escape_double = FALSE, trim_ws = TRUE)
+bd <- as.data.table(bd)
+
+
+############ Análisis de los ponderadores ####################
+
+bd$Ponderador5033[5034:5536] <- 0
+# Ajustando los ponderadores de pesos a ponderadores de frecuencias
+minPon5033 = min(bd$Ponderador5033[bd$Ponderador5033 > 0])
+minPon5536 = min(bd$Ponderador5536[bd$Ponderador5536 > 0])
+bd$Ponderador5033_2 <- (bd$Ponderador5033 / minPon5033)*100
+bd$Ponderador5536_2 <- (bd$Ponderador5536 / minPon5536)*100
+
+# Ponderadores a nivel persona 
+bd$Ponderador5033_3 <- round(bd$Ponderador5033_2)
+bd$Ponderador5536_3 <- round(bd$Ponderador5536_2)
+
+#ponderadores a nivel cada 100 personas
+bd$Ponderador5033_4 <- round(bd$Ponderador5033_3/100)
+bd$Ponderador5536_4 <- round(bd$Ponderador5536_3/100)
+############ Etiquetado de las variables ############
 
 ## definiendo algunas etiquetas comunes para los datos 
 inter_no <- c("Internauta", "No Internauta")
@@ -64,6 +69,31 @@ bd$P31A <- as.factor(bd$P31A)
 bd$P32  <- as.factor(bd$P32)
 bd$P33  <- as.factor(bd$P33)
 bd$P35  <- as.factor(bd$P35)
+bd$P148  <- as.factor(bd$P148)
+bd$P149  <- as.factor(bd$P149)
+bd$P150  <- as.factor(bd$P150)
+bd$P151  <- as.factor(bd$P151)
+bd$P152  <- factor(bd$P152,labels = c("AS","CP","NP","PI","EM","ES","AC","RJ","SB","SN"))
+bd$P153  <- as.factor(bd$P153)
+bd$P154A <- as.factor(bd$P154A)
+bd$P155  <- as.factor(bd$P155)
+bd$P156A <- as.factor(bd$P156A)
+bd$P156B <- as.factor(bd$P156B)
+bd$P156C <- as.factor(bd$P156C)
+bd$P156D <- as.factor(bd$P156D)
+bd$P156E <- as.factor(bd$P156E)
+bd$P156F <- as.factor(bd$P156F)
+bd$P156G <- as.factor(bd$P156G)
+bd$P156H <- as.factor(bd$P156H)
+bd$P156I <- as.factor(bd$P156I)
+bd$P156J <- as.factor(bd$P156J)
+bd$P156K <- as.factor(bd$P156K)
+bd$P157  <- as.factor(bd$P157)
+bd$P158  <- as.factor(bd$P158)
+bd$P159  <- as.factor(bd$P159)
+bd$P160  <- as.factor(bd$P160) 
+bd$CodP160 <- as.factor(bd$CodP160)
+bd$Nse <- as.factor(bd$Nse) 
 
 bd$P36A[bd$P36A==9] <- NA
 bd$P36A  <- as.factor(bd$P36A)
@@ -91,38 +121,12 @@ bd$P139[bd$P139==9] <- NA
 bd$P139  <- as.factor(bd$P139)
 bd$P140[bd$P140==9] <- NA
 bd$P140  <- as.factor(bd$P140)
-
-bd$P148  <- as.factor(bd$P148)
-bd$P149  <- as.factor(bd$P149)
-bd$P150  <- as.factor(bd$P150)
-bd$P151  <- as.factor(bd$P151)
-bd$P152  <- factor(bd$P152,labels = c("AS","CP","NP","PI","EM","ES","AC","RJ","SB","SN"))
-bd$P153  <- as.factor(bd$P153)
-bd$P154A <- as.factor(bd$P154A)
-bd$P155  <- as.factor(bd$P155)
-bd$P156A <- as.factor(bd$P156A)
-bd$P156B <- as.factor(bd$P156B)
-bd$P156C <- as.factor(bd$P156C)
-bd$P156D <- as.factor(bd$P156D)
-bd$P156E <- as.factor(bd$P156E)
-bd$P156F <- as.factor(bd$P156F)
-bd$P156G <- as.factor(bd$P156G)
-bd$P156H <- as.factor(bd$P156H)
-bd$P156I <- as.factor(bd$P156I)
-bd$P156J <- as.factor(bd$P156J)
-bd$P156K <- as.factor(bd$P156K)
-bd$P157  <- as.factor(bd$P157)
-bd$P158  <- as.factor(bd$P158)
-bd$P159  <- as.factor(bd$P159)
-bd$P160  <- as.factor(bd$P160) 
-bd$CodP160 <- as.factor(bd$CodP160)
-bd$Nse <- as.factor(bd$Nse)
 bd$P14[bd$P14==9]  <- NA
 bd$P30[bd$P30==99] <- NA
 bd$P34[bd$P34==99] <- NA
 
-```
-```{r}
+
+# Etiquendo Variables 
 # position: 3
 bd$P2 <- as.factor(bd$P2)
 labels <- c("Si", "No" )
@@ -133,21 +137,28 @@ labels <- c("Hace 7 días o menos", "Entre 8 a 15 días", "Entre 16 a 30 días",
 levels(bd$P3) <- labels
 # position: 5
 bd$P1A <- as.factor(bd$P1A)
-labels <- c("No existe el servicio en el barrio/localidad", "El costo del servicio alto", "No tiene equipos para conectarse", "No sabe qué es Internet", "No sabe cómo usar Internet", "No está interesado en Internet", "El contenido de Internet es malo", "Otro" )
+labels <- c("No existe el servicio en el barrio/localidad", "El costo del servicio alto", 
+            "No tiene equipos para conectarse", "No sabe qué es Internet", "No sabe cómo usar Internet", 
+            "No está interesado en Internet", "El contenido de Internet es malo", "Otro" )
 levels(bd$P1A) <- labels
+
 # position: 6
 bd$P1B <- as.factor(bd$P1B)
-labels <- c("No existe el servicio en el barrio/localidad", "El costo del servicio alto", "No tiene equipos para conectarse", "No sabe qué es Internet", "No sabe cómo usar Internet", "No está interesado en Internet", "El contenido de Internet es malo", "Otro" )
 levels(bd$P1B) <- labels
+table(bd$P1B)
 # position: 7
-bd$P1C <- as.factor(bd$P1C)
-labels <- c("No existe el servicio en el barrio/localidad", "El costo del servicio alto", "No tiene equipos para conectarse", "No sabe qué es Internet", "No sabe cómo usar Internet", "No está interesado en Internet", "El contenido de Internet es malo", "Otro" )
-levels(bd$P1C) <- labels
+bd$P1C <- factor(bd$P1C)
+levels(bd$P1C) <- list(5="No sabe cómo usar Internet", 6 = "No está interesado en Internet", 7 = "El contenido de Internet es malo" )
+list( 5 ="No sabe cómo usar Internet", 6 = "No está interesado en Internet", 7 = "El contenido de Internet es malo" )
+
+table(bd$P1C)
 # position: 8
+labels <- list(1="No existe el servicio en el barrio/localidad", 2 = "El costo del servicio alto", 3  = "No tiene equipos para conectarse", 4 = "No sabe qué es Internet", 5 =  "No sabe cómo usar Internet", 6 = "No está interesado en Internet", 7 = "El contenido de Internet es malo", 8 = "Otro" )
 bd$P1D <- as.factor(bd$P1D)
-labels <- c("No existe el servicio en el barrio/localidad", "El costo del servicio alto", "No tiene equipos para conectarse", "No sabe qué es Internet", "No sabe cómo usar Internet", "No está interesado en Internet", "El contenido de Internet es malo", "Otro" )
-levels(bd$P1D) <- labels
+levels(bd$P1D) <- list(1="No existe el servicio en el barrio/localidad", 2 = "El costo del servicio alto", 3  = "No tiene equipos para conectarse", 4 = "No sabe qué es Internet", 5 =  "No sabe cómo usar Internet", 6 = "No está interesado en Internet", 7 = "El contenido de Internet es malo", 8 = "Otro" )
+
 # position: 10
+
 bd$P2A <- as.factor(bd$P2A)
 labels <- c("Obtener información", "Descargar/imprimir documentos", "Obtener algún formulario", "Enviar/recibir correo electrónico", "Contactar a algún familiar/amigo", "Comprar/pagar artículos/servicios por Internet", "Revisar alguna red social (Facebook, WhatsApp, etc)", "Otro", "Ninguno" )
 levels(bd$P2A) <- labels
@@ -907,8 +918,7 @@ levels(bd$P122) <- labels
 
 
 ##################################3
-#####################################
-#####################
+
 # position: 371
 bd$P124 <- as.factor(bd$P124)
 labels <- c("No realiza actividad", "NS/NR" )
@@ -1006,34 +1016,52 @@ bd$P133A <- as.factor(bd$P133A)
 labels <- c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
 levels(bd$P133A) <- labels
 
-```
-
-
-```{r}
-names(bd)
-```
-
-
-```{r}
-# Ampliación de los factores de expansion
-# revisar el script adjunto 
-```
 
 
 
-```{r}
-#Separando las bases de datos de internautas y NO internautas
-NoInter <- bd[bd$Tipo == "No Internauta",]
-Internautas <- bd[bd$Tipo == "Internauta",]
-```
 
 
-## Including Plots
 
-You can also embed plots, for example:
+############## Análisis de valores faltantes 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+# Separando las bases de datos
+Internautas = bd[bd$Tipo == 1]
+NoInter = bd[bd$Tipo == 2]
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+missmap(bd,y.labels=NULL,
+        y.at=NULL,x.cex = 0.1,
+        main = "Mapa de valores faltantes")
+missmap(Internautas,y.labels=NULL,
+        y.at=NULL,x.cex = 0.1,
+        main = "Mapa de valores faltantes")
+missmap(NoInter,y.labels=NULL,
+        y.at=NULL,x.cex = 0.1,
+        main = "Mapa de valores faltantes")
+
+# CONSIDERANDO COMO GRUPO DE ESTUDIO A LOS INTERNAUTAS 
+# Ordendando las variables ne función de la cantidad de valores perdidos
+mice_plot <- aggr(Internautas,
+                  col=c('navyblue','yellow'),
+                  numbers=TRUE, sortVars=TRUE,
+                  labels=names(Internautas), cex.axis=.7,
+                  gap=3, ylab=c("Missing data","Pattern"),
+                  plot = F)
+
+missing_data <- mice_plot$missings
+row.names(missing_data) <- NULL
+missing_data$Percent <- missing_data$Count/length(Internautas$P152)
+missing_data[order(missing_data$Percent),]
+
+#Considerando aquellas con solamente 0.05 de NaN
+var_consideradas <- missing_data[missing_data$Percent<=0.00,1]
+var_consideradas
+
+# Nueva Filtrada Base de Datos para Internautas 
+Inter_f <- Internautas[,var_consideradas]
+missmap(obj = Inter_f, y.labels = NULL,
+        y.at=NULL, x.cex = 0.4,
+        main = "Mapa de valores faltantes")
+
+
+
