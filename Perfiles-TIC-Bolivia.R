@@ -1053,15 +1053,110 @@ row.names(missing_data) <- NULL
 missing_data$Percent <- missing_data$Count/length(Internautas$P152)
 missing_data[order(missing_data$Percent),]
 
-#Considerando aquellas con solamente 0.05 de NaN
+#Considerando aquellas ue tienen las observaciones completas
 var_consideradas <- missing_data[missing_data$Percent<=0.00,1]
 var_consideradas
 
 # Nueva Filtrada Base de Datos para Internautas 
-Inter_f <- Internautas[,var_consideradas]
+Inter_f <- Internautas[,..var_consideradas]
 missmap(obj = Inter_f, y.labels = NULL,
         y.at=NULL, x.cex = 0.4,
         main = "Mapa de valores faltantes")
 
 
+# Eliminando las columnas que no entraran en el análisis
+
+Inter_f$P2   <- as.factor(Inter_f$P2) 
+Inter_f$P4   <- as.factor(Inter_f$P4)
+Inter_f$P6   <- as.factor(Inter_f$P6)
+Inter_f$P10  <- as.factor(Inter_f$P10)
+Inter_f$P12  <- as.factor(Inter_f$P12)
+Inter_f$P16  <- as.factor(Inter_f$P16)
+Inter_f$P17  <- as.factor(Inter_f$P17)
+Inter_f$P20  <- as.factor(Inter_f$P20)
+Inter_f$P23  <- as.factor(Inter_f$P23)
+Inter_f$P28  <- as.factor(Inter_f$P28)
+Inter_f$P148  <- as.factor(Inter_f$P148)
+Inter_f$P149  <- as.factor(Inter_f$P149)
+Inter_f$P150  <- as.factor(Inter_f$P150)
+Inter_f$P151  <- as.factor(Inter_f$P151)
+Inter_f$P153  <- as.factor(Inter_f$P153)
+Inter_f$P154A <- as.factor(Inter_f$P154A)
+Inter_f$P155  <- as.factor(Inter_f$P155)
+Inter_f$P156A <- as.factor(Inter_f$P156A)
+Inter_f$P156B <- as.factor(Inter_f$P156B)
+Inter_f$P156C <- as.factor(Inter_f$P156C)
+Inter_f$P156D <- as.factor(Inter_f$P156D)
+Inter_f$P156E <- as.factor(Inter_f$P156E)
+Inter_f$P156F <- as.factor(Inter_f$P156F)
+Inter_f$P156G <- as.factor(Inter_f$P156G)
+Inter_f$P156H <- as.factor(Inter_f$P156H)
+Inter_f$P156I <- as.factor(Inter_f$P156I)
+Inter_f$P156J <- as.factor(Inter_f$P156J)
+Inter_f$P156K <- as.factor(Inter_f$P156K)
+Inter_f$P157  <- as.factor(Inter_f$P157)
+Inter_f$P158  <- as.factor(Inter_f$P158)
+Inter_f$P159  <- as.factor(Inter_f$P159)
+
+Inter_f$P1 <- scale(Inter_f$P1, center= TRUE, scale=TRUE)
+
+names(Inter_f)
+#Inter_f_Values <- Inter_f[,c("NUMBOL", "Tipo", "P45A", "P44A", "P64A")]
+Inter_f$NUMBOL <- NULL
+Inter_f$Ponderador5536 <- NULL
+Inter_f$Ponderador5033 <- NULL
+Inter_f$Nse <- NULL
+Inter_f$CodP160 <- NULL
+Inter_f$Tipo <- NULL
+Inter_f$P160 <- NULL
+Inter_f$P45A <- NULL
+Inter_f$P44A <- NULL
+Inter_f$P64A <- NULL
+
+
+names(Inter_f)
+
+
+
+## Primera Clasificación 
+
+Inter_f <- data.frame(Inter_f)
+library(clustMixType)
+set.seed(12345)
+i_clust.mod <- kproto(Inter_f,4)
+i_clust.table <- table(i_clust.mod$cluster)
+round(i_clust.table/nrow(Inter_f)*100,2)
+
+names(Inter_f)
+
+
+# Identificando Variables a través de Random Forest 
+library(randomForest)
+i_new_data <- Inter_f
+i_new_data$cluster <- as.factor(i_clust.mod$cluster)
+
+set.seed(12345)
+train = sample(1:nrow(i_new_data), nrow(i_new_data)/2)
+
+set.seed(12345)
+i_rf.mod <- randomForest(cluster ~ ., data = i_new_data, subset=train,
+                         importance=TRUE, ntree=2000)
+
+clust.i_rf.hat <- predict(i_rf.mod,newdata = i_new_data[-train,])
+i_ct <- table(clust.i_rf.hat,i_new_data[-train,]$cluster)
+i_ct 
+i_ct <- as.matrix(i_ct)
+round(sum(diag(i_ct))/nrow(i_new_data[-train,])*100,2)
+
+vi.i_rf.mod <- i_rf.mod$importance[,4]
+barplot(vi.i_rf.mod[order(vi.i_rf.mod)],
+        main = "RF - Variables Importantes",
+        xlab = "MeanDecreaseAccuracy",horiz = T,
+        cex.axis = 0.8,
+        cex.names = 0.4,las=2)
+abline(v=0.01,col="red")
+
+vi.i_rf.mod_f <- data.frame(vi.i_rf.mod[vi.i_rf.mod>0.01][order(vi.i_rf.mod[vi.i_rf.mod>0.01],decreasing = T)])
+vi.i_rf.mod_f
+table(Inter_f$P152)
 
