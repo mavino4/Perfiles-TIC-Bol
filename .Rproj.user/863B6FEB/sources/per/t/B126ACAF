@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "961546673",
+    "hash" : "588386735",
     "id" : "B126ACAF",
-    "lastKnownWriteTime" : 1524615963,
-    "last_content_update" : 1524894310437,
-    "path" : "~/Documents/Club Data Science/proyecto AGETIC/BASES/Análisis de Conglomerados, Encuesta Nacional de Opinión sobre TIC.Rmd",
+    "lastKnownWriteTime" : 1527204577,
+    "last_content_update" : 1527204577,
+    "path" : "/media/marco/165d5eb4-ca0f-4d82-a5d6-3052d1663348/Conglomerados TIC/Análisis de Conglomerados, Encuesta Nacional de Opinión sobre TIC.Rmd",
     "project_path" : "Análisis de Conglomerados, Encuesta Nacional de Opinión sobre TIC.Rmd",
     "properties" : {
         "cursorPosition" : "316,0",
         "last_setup_crc32" : "",
-        "scrollLine" : "312"
+        "scrollLine" : "288"
     },
     "relative_order" : 1,
     "source_on_save" : false,

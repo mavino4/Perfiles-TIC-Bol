@@ -238,27 +238,63 @@ i_new_data_f$P136  <- Internautas$P136
 i_new_data_f$P129A <- Internautas$P129A
 i_new_data_f$P133A <- Internautas$P133A
 i_new_data_f$P15A <- Internautas$P15A
-
+i_new_data_f$P3<- Internautas$P3
 
 # Edades 
 tapply(i_new_data_f$P1, i_new_data_f$cluster, summary)
 ggplot(i_new_data_f, aes(x=cluster, y=P1, fill=cluster)) + 
-  geom_boxplot() #box plot 
-
-# Tenencia de computadora, portatil o tablet en casa
-round(prop.table(table(i_new_data_f$P6, i_new_data_f$cluster), margin =2),2)
-ggplot(i_new_data_f, aes(x=i_new_data_f$P6, fill=cluster)) + 
-  geom_bar(aes(y=..prop.., group = cluster),position=position_dodge()) #Barras
+  geom_boxplot() + ylab("edad (años)") #box plot 
 
 
-# Análisis de última conexion 
-round(prop.table(table(i_new_data_f$P3, i_new_data_f$cluster), margin =2),2)
-ggplot(i_new_data_f, aes(x=i_new_data_f$P3, fill=cluster)) + 
-  geom_bar(aes(y=..prop.., group = cluster),position=position_dodge()) 
+# Análisis de última conexion
+# Añadiendo etiquetas
+i_new_data_f$P3 <- as.factor(i_new_data_f$P3)
+levels(i_new_data_f$P3) <- c("[,7]","[8,15]", "[16,30]")
+
+# Generando DF
+a = round(prop.table(table(i_new_data_f$P3, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P3", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P3, label= Freq )) + 
+  geom_bar (stat = "identity") + #ggtitle("¿Tienen Computadoras?") + 
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5))
+
+# ¿Tiene computadora de escritorio, computadora portátil o tablet en su casa?
+a = round(prop.table(table(i_new_data_f$P6, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P6", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P6, label= Freq )) + 
+  geom_bar (stat = "identity") + #ggtitle("¿Tienen Computadoras?") + 
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5))
+
+
+#### Días que utliza la PC, portatil o tablet en casa 
+a = round(prop.table(table(i_new_data_f$P10, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P10", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P10, label= Freq )) + 
+  geom_bar (stat = "identity") + #ggtitle("¿Tienen Computadoras?") + 
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5)) + theme_minimal() + scale_fill_brewer( 
+    palette = "Greens"
+  ) 
+
+
+
+
+i_new_data_f$P10 <- as.factor(i_new_data_f$P10)
+levels(i_new_data_f$P10) <- c(1,2,3,4,5,6,7,"< 1/s ", "No Usa")
+table(i_new_data_f$P10)
+ggplot(i_new_data_f, aes(x=P10, fill=cluster)) + 
+  geom_bar(aes(y=..prop.., group = cluster),position="fill") + scale_fill_brewer(palette = "RdYlGn") 
+  #scale_fill_manual(values= c("skyblue", "royalblue", "blue", "navy"))
+
+Sums(is.na(i_new_data_f$P10))
 
 
 # Nivel de instrucción del entrevistado 
-
 levels(i_new_data_f$P149) <- educ_labels <- c("Primaria o menos","Secundaria incompleta", "Secundaria completa", "Técnico", "FFAA,Policía, Normal", "Univeridad incompleta", "Universidad completa", "Posgrado")
 
 round(prop.table(table(i_new_data_f$P149, i_new_data_f$cluster)),2)

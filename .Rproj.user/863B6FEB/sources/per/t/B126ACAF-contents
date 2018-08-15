@@ -37,7 +37,7 @@ library(VIM)
 library(mice)
 library(grid)
 library(gridExtra)
-bd <- read_excel("/home/marco/Documents/Club Data Science/proyecto AGETIC/BASES/base-5536-bdfinalcorregido2.xlsx")
+# bd <- read_excel("/home/marco/Documents/Club Data Science/proyecto AGETIC/BASES/base-5536-bdfinalcorregido2.xlsx")
 ```
 
 ### 3.1 Análisis de valores faltantes
@@ -182,7 +182,7 @@ missmap(bd_fa2, y.labels = NULL,
 
 
 ```{r, include=FALSE}
-tempDataImput <- readRDS("/home/marco/Documents/Club Data Science/proyecto AGETIC/BASES/tempDataImput.rds")
+#tempDataImput <- readRDS("/home/marco/Documents/Club Data Science/proyecto AGETIC/BASES/tempDataImput.rds")
 ```
 
 
@@ -239,7 +239,6 @@ missmap(bd_fa2c, y.labels = NULL,
 ## 3. Modelación
 
 ```{r, include=FALSE}
-
 i_data <- readRDS("/home/marco/Documents/Club Data Science/proyecto AGETIC/BASES/bd_imputada.rds")
 i_input <- i_data[,-c(1,17,57,58,59,60)]
 ```
