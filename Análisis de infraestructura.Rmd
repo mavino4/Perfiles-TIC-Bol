@@ -1,0 +1,117 @@
+---
+title: "Untitled"
+author: "A. Paco M. Vino"
+date: "August 16, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Análisis de la Radio 
+
+```{r cars}
+# SI NO 
+i_new_data_f$P20 <- Internautas$P20
+table(i_new_data_f$P20)
+
+a = round(prop.table(table(i_new_data_f$P20, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P20", "Cluster", "Freq")
+a$P20 <- as.factor(a$P20)
+levels(a$P20) <- c("Si", "No")
+ggplot(a, aes(x = Cluster, y = Freq , fill = P20, label= Freq )) + 
+  geom_bar (stat = "identity") +  
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5)) + scale_fill_brewer(palette = "BuGn", direction = -1)
+ggsave("Graphs/P20_tiene_Radio.png", width = 6, height = 6)
+
+
+```
+
+## Análisis de internet en casa 
+ Analizando la pregunta 23, si tiene internet fijo, módem o no tiene ninguno.  
+
+
+```{r pressure, echo=FALSE}
+table(i_new_data_f$P23)
+ggplot(i_new_data_f, aes(x=P23, fill=cluster)) + 
+  geom_bar(aes(y=..prop.., group = cluster),position=position_dodge())
+
+i_new_data_f$P23 <- as.factor(i_new_data_f$P23)
+levels(i_new_data_f$P23)<- c("Int. Fijo", "Módem", "Ninguno")
+a = round(prop.table(table(i_new_data_f$P23, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P23", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P23, label= Freq )) + 
+  geom_bar (stat = "identity") +  
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5)) + 
+  scale_fill_brewer(palette = "Spectral" , direction = -1) 
+ggsave("Graphs/P23_internet_casa.png", width = 6, height = 6)
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+
+i_new_data_f$P25 <- Internautas$P25
+table(i_new_data_f$P25)
+i_new_data_f$P25 <- as.factor(i_new_data_f$P25)
+labels <- c("128 kbps", "256 kbps", "512 kbps", "1 a 2 Mbps", " 2+ a 3 Mbps",  "3+ Mbps", "NS/NR" )
+levels(i_new_data_f$P25) <- labels
+ggplot(i_new_data_f, aes(x=cluster, fill=P25)) + 
+  geom_bar(aes(y=..prop.., group = P25),position=position_dodge()) + scale_fill_brewer(palette = "Spectral" , direction = 1)  
+# +  theme(axis.text.x=element_text(angle=90, hjust=1))
+ggsave("Graphs/P25_vel_inter.png", width = 6, height = 6)
+
+
+```
+
+Hallando nivel de satisfacción del servicio de internet 
+```{r}
+i_new_data_f$P26 <- Internautas$P26
+table(i_new_data_f$P26)
+
+a<-  as.data.frame(rbind(table(i_new_data_f$P26, i_new_data_f$cluster)))
+a <- a[1:5,]
+a$val <- c(1:5)
+colSums(a)  
+a
+for (k in c(1:4)){
+  print(k)
+  ap = sum((a[,k]*a[,"val"]))/ colSums(a)[k]
+  print(ap)
+}
+```
+
+Para qué utilizan el internet en casa
+```{r}
+i_new_data_f$P27A <- Internautas$P27A
+i_new_data_f$P27B <- Internautas$P27B
+i_new_data_f$P27C <- Internautas$P27C
+i_new_data_f$P27D <- Internautas$P27D
+
+table(i_new_data_f$P27A)
+
+
+a1 <- as.data.frame(table(i_new_data_f$P27A, i_new_data_f$cluster))
+a2 <- as.data.frame(table(i_new_data_f$P27B, i_new_data_f$cluster))
+a3 <- as.data.frame(table(i_new_data_f$P27C, i_new_data_f$cluster))
+total <- merge(a1,a2,by=c("Var1","Var2"), all = TRUE) 
+total <- merge(total,a3,by=c("Var1","Var2"), all = TRUE)
+total[is.na(total)] = 0
+total$FreqT <- total$Freq.x + total$Freq.y + total$Freq
+total[,3:5] <- NULL
+total = a1
+df <- data.frame(total[which(total$Var1 ==1),3], total[which(total$Var1 ==2),3], total[which(total$Var1 ==3),3], total[which(total$Var1 ==4),3], total[which(total$Var1 ==5),3], total[which(total$Var1 ==6),3], total[which(total$Var1 ==7),3], total[which(total$Var1 ==8),3], total[which(total$Var1 ==9),3] , total[which(total$Var1 ==10),3], total[which(total$Var1 ==11),3], total[which(total$Var1 ==12),3] )
+# Cambiando las etiquetas en función de las opciones 
+colnames(df) <- c("Contactar ", "Info", "Compra Venta", "Acad.", "Trabajo", "Noticias", "Descargar", "Jugar", "Multimedia", "RRSS", "E-mail", "Otro" )
+row.names(df)<- c("A","B","C","D") 
+df 
+data <-  dfToProp(df)
+dfToPercapita(df) # Intensidad de uso 
+dfToPreRela(df) # Preferencia relativa uso
+
+```
+

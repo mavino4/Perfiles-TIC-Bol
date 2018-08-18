@@ -1,0 +1,568 @@
+---
+title: "Análisis variables importantes"
+author: "A. Paco M. Vino"
+date: "August 17, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## P138 Medio de comunicación más imparcial
+ 1 P138                                                        0.22869378
+
+```{r cars}
+i_new_data_f$P138<- Internautas$P138
+
+table(i_new_data_f$P138, i_new_data_f$cluster)
+i_new_data_f$P138 <- as.factor(i_new_data_f$P138)
+
+levels(i_new_data_f$P138) <- c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "NS/NR" )
+round(prop.table(table(i_new_data_f$P138, i_new_data_f$cluster), margin =1),2)
+ggplot(i_new_data_f, aes(x=P138, fill=cluster)) + 
+  geom_bar(aes(y=..prop.., group = cluster),position=position_dodge())
+
+
+```
+
+## Cúal es el medio más profundo
+2 P139                                                        0.20390238
+
+```{r pressure, echo=FALSE}
+i_new_data_f$P139<- Internautas$P139
+
+table(i_new_data_f$P139, i_new_data_f$cluster)
+i_new_data_f$P139 <- as.factor(i_new_data_f$P139)
+levels(i_new_data_f$P139) <- c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "NS/NR" )
+
+data = as.data.frame(t(rbind(round(prop.table(table(i_new_data_f$P139 , i_new_data_f$cluster), margin =2),2))))
+data
+colnames(data)=c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RR SS", "Ninguno", "NS/NR" )
+
+# To use the fmsb package, I have to add 2 lines to the dataframe: the max and min of each topic to show on the plot!
+data=rbind(rep(max(data),length(colnames(data))) , rep(min(data),length(colnames(data))) , data)
+# The default radar chart proposed by the library:
+radarchart(data)
+radarChartCustom(data)
+```
+
+
+# P137 El Medio de comunicación más claro 
+3 P137                                                        0.14023776
+```{r}
+table(i_new_data_f$P137, i_new_data_f$cluster)
+i_new_data_f$P137 <- as.factor(i_new_data_f$P137)
+levels(i_new_data_f$P137) <- c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "NS/NR" )
+
+data = as.data.frame(t(rbind(round(prop.table(table(i_new_data_f$P137 , i_new_data_f$cluster), margin =2),2))))
+data
+colnames(data)=c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RR SS", "Ninguno", "NS/NR" )
+
+# To use the fmsb package, I have to add 2 lines to the dataframe: the max and min of each topic to show on the plot!
+data=rbind(rep(max(data),length(colnames(data))) , rep(min(data),length(colnames(data))) , data)
+# The default radar chart proposed by the library:
+radarchart(data)
+radarChartCustom(data)
+```
+
+# P42A Donde más se conecto a interntet 
+
+4 P42A                                                        0.13528673
+
+```{r}
+table(i_new_data_f$P42F)
+i_new_data_f$P42B <- Internautas$P42B
+i_new_data_f$P42C <- Internautas$P42C
+i_new_data_f$P42E <- Internautas$P42E
+i_new_data_f$P42F <- Internautas$P42F
+
+a1 <- as.data.frame(table(i_new_data_f$P42A, i_new_data_f$cluster))
+a2 <- as.data.frame(table(i_new_data_f$P42B, i_new_data_f$cluster))
+a3 <- as.data.frame(table(i_new_data_f$P42C, i_new_data_f$cluster))
+total <- merge(a1,a2,by=c("Var1","Var2"), all = TRUE) 
+total <- merge(total,a3,by=c("Var1","Var2"), all = TRUE)
+
+total
+total[is.na(total)] = 0
+total$FreqT <- total$Freq.x + total$Freq.y + total$Freq
+total[,3:5] <- NULL
+total
+
+df <- data.frame(total[which(total$Var1 ==1),3], total[which(total$Var1 ==2),3], total[which(total$Var1 ==3),3], total[which(total$Var1 ==4),3], total[which(total$Var1 ==5),3], total[which(total$Var1 ==6),3], total[which(total$Var1 ==7),3], total[which(total$Var1 ==8),3], total[which(total$Var1 ==9),3] , total[which(total$Var1 ==11),3])
+# Cambiando las etiquetas en función de las opciones 
+colnames(df) <- c("En el trabajo", "En el Colegio", "En la Universidad", "Telecentro", "Cafe Internet", "Restaurantes, cafes", "Espacios públicos", "Casa de amigos/familiares", "Otro", "Ninguno" )
+total[which(total$Var1 ==5),]
+total
+row.names(df)<- c("A","B","C","D") 
+df = total 
+df
+dfToPercapita(df) # Intensidad de uso 
+dfToPreRela(df) # Preferencia relativa uso
+```
+
+# P140 Medio más abierto a su particiación 
+
+5 P140                                                        0.12124602
+```{r}
+
+table(i_new_data_f$P140, i_new_data_f$cluster)
+i_new_data_f$P140 <- as.factor(i_new_data_f$P140)
+levels(i_new_data_f$P140) <- c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "NS/NR" )
+
+data = as.data.frame(t(rbind(round(prop.table(table(i_new_data_f$P140 , i_new_data_f$cluster), margin =2),2))))
+data
+colnames(data)=c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RR SS", "Ninguno", "NS/NR" )
+
+# To use the fmsb package, I have to add 2 lines to the dataframe: the max and min of each topic to show on the plot!
+data=rbind(rep(max(data),length(colnames(data))) , rep(min(data),length(colnames(data))) , data)
+# The default radar chart proposed by the library:
+radarchart(data)
+radarChartCustom(data)
+```
+
+# P136 Medio Más serio 
+6 P136                                                        0.10313471
+
+```{r}
+table(i_new_data_f$P136, i_new_data_f$cluster)
+i_new_data_f$P136 <- as.factor(i_new_data_f$P136)
+levels(i_new_data_f$P136) <- c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "NS/NR" )
+
+data = as.data.frame(t(rbind(round(prop.table(table(i_new_data_f$P136 , i_new_data_f$cluster), margin =2),2))))
+data
+colnames(data)=c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RR SS", "Ninguno", "NS/NR" )
+data=rbind(rep(max(data),length(colnames(data))) , rep(min(data),length(colnames(data))) , data)
+radarChartCustom(data)
+```
+
+# Medio preferido para negocios y oprtunidades locales 
+7 P133A                                                       0.09522333
+```{r}
+table(i_new_data_f$P133A, i_new_data_f$cluster)
+i_new_data_f$P133A <- as.factor(i_new_data_f$P133A)
+levels(i_new_data_f$P133A) <- c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "Charlas", "Otro",  "NS/NR" )
+c("Tv", "Radio", "Periódicos impresos", "Periódicos digitales", "Páginas web", "Redes sociales", "Charlas con amigos", "Otro", "NS/NR" )
+data = as.data.frame(t(rbind(round(prop.table(table(i_new_data_f$P133A , i_new_data_f$cluster), margin =2),2))))
+data
+colnames(data)=c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "Charlas", "Otro",  "NS/NR" )
+data=rbind(rep(max(data),length(colnames(data))) , rep(min(data),length(colnames(data))) , data)
+radarChartCustom(data)
+```
+# Medio más verídivo 
+8 P135                                                        0.07352049
+```{r}
+table(i_new_data_f$P135, i_new_data_f$cluster)
+i_new_data_f$P135 <- as.factor(i_new_data_f$P135)
+levels(i_new_data_f$P135) <- c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "NS/NR" )
+
+data = as.data.frame(t(rbind(round(prop.table(table(i_new_data_f$P135 , i_new_data_f$cluster), margin =2),2))))
+data
+colnames(data)=c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RR SS", "Ninguno", "NS/NR" )
+data=rbind(rep(max(data),length(colnames(data))) , rep(min(data),length(colnames(data))) , data)
+radarChartCustom(data)
+```
+
+# Dias que se conectan a internet  
+9 # P10                                                         0.07087477
+
+# Departamento 
+10 P158                                                        0.06880491
+```{r}
+
+
+table(i_new_data_f$P158)
+ggplot(i_new_data_f, aes(x=P158, fill=cluster)) + 
+  geom_bar(aes(y=..prop.., group = cluster),position=position_dodge())
+
+i_new_data_f$P158 <- as.factor(i_new_data_f$P158)
+levels(i_new_data_f$P158)<- c("LPZ","CHQ","CBB", "SCZ", "ORU", "PTS", "TAR", "BEN", "PAN")
+a = round(prop.table(table(i_new_data_f$P158, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P158", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P158, label= Freq )) + 
+  geom_bar (stat = "identity") +  
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5)) + 
+  scale_fill_manual(values = c("red2", "#FF9999", "#3399FF","#339900", "#999999", "#CCCC33","#FF6600","#66CC66","#660099" )) 
+ggsave("Graphs/P158_Departamentos.png", width = 6, height = 6)
+```
+
+```{r}
+table(i_new_data_f$P159)
+
+i_new_data_f$P159 <- as.factor(i_new_data_f$P159)
+levels(i_new_data_f$P159)<- c("Ciudad capital", "Ciudad Intermedia", "Centro poblado")
+a = round(prop.table(table(i_new_data_f$P159, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P159", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P159, label= Freq )) + 
+  geom_bar (stat = "identity") +  
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5)) + 
+  scale_fill_brewer(palette = "Accent" ) 
+ggsave("Graphs/P159_Area.png", width = 6, height = 6)
+```
+
+
+
+#  P131A Medio para informase de ciencia y tecnologïa 
+11 P131A                                                       0.06677112
+```{r}
+table(i_new_data_f$P131A, i_new_data_f$cluster)
+i_new_data_f$P131A <- as.factor(i_new_data_f$P131A)
+levels(i_new_data_f$P131A) <- c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "Charlas", "Otro",  "NS/NR" )
+data = as.data.frame(t(rbind(round(prop.table(table(i_new_data_f$P131A , i_new_data_f$cluster), margin =2),2))))
+data
+colnames(data)=c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "Charlas", "Otro",  "NS/NR" )
+data=rbind(rep(max(data),length(colnames(data))) , rep(min(data),length(colnames(data))) , data)
+radarChartCustom(data)
+```
+
+# P134 Medio más rapido 
+12 P134                                                        0.05930301
+```{r}
+table(i_new_data_f$P134, i_new_data_f$cluster)
+i_new_data_f$P134 <- as.factor(i_new_data_f$P134)
+levels(i_new_data_f$P134) <- c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "NS/NR" )
+
+data = as.data.frame(t(rbind(round(prop.table(table(i_new_data_f$P134 , i_new_data_f$cluster), margin =2),2))))
+data
+colnames(data)=c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RR SS", "Ninguno", "NS/NR" )
+data=rbind(rep(max(data),length(colnames(data))) , rep(min(data),length(colnames(data))) , data)
+radarChartCustom(data)
+```
+
+# Medio para entretenimento P132A 
+13 P132A                                                       0.05842856
+```{r}
+table(i_new_data_f$P132A, i_new_data_f$cluster)
+i_new_data_f$P132A <- as.factor(i_new_data_f$P132A)
+levels(i_new_data_f$P132A) <- c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "Charlas", "Otro",  "NS/NR" )
+data = as.data.frame(t(rbind(round(prop.table(table(i_new_data_f$P132A , i_new_data_f$cluster), margin =2),2))))
+data
+colnames(data)=c("Tv", "Radio", "P. Imp.", "P. Dig.", "P. Web", "RRSS", "Ninguno", "Charlas", "Otro",  "NS/NR" )
+data=rbind(rep(max(data),length(colnames(data))) , rep(min(data),length(colnames(data))) , data)
+radarChartCustom(data)
+```
+
+# P124 evaluación de la conexión principal a internet
+29 P124A                                                       0.02116524
+14 P124C                                                       0.05196671
+15 P124B                                                       0.05188536
+16 P124D                                                       0.04987957
+17 P124E                                                       0.04638536
+
+Calificación promedio de la conexión principal a internet para : 
+Visitar sitios web 
+```{r}
+a<-  as.data.frame(rbind(table(i_new_data_f$P124A, i_new_data_f$cluster)))
+a <- a[1:5,]
+a$val <- c(1:5)
+for (k in c(1:4)){
+  ap = sum((a[,k]*a[,"val"]))/ colSums(a)[k]
+  print(ap)
+}
+
+```
+Realizar videollamadas 
+```{r}
+a<-  as.data.frame(rbind(table(i_new_data_f$P124B, i_new_data_f$cluster)))
+a <- a[1:5,]
+a$val <- c(1:5)
+for (k in c(1:4)){
+  ap = sum((a[,k]*a[,"val"]))/ colSums(a)[k]
+  print(ap)
+}
+
+```
+
+ver películas 
+```{r}
+a<-  as.data.frame(rbind(table(i_new_data_f$P124C, i_new_data_f$cluster)))
+a <- a[1:5,]
+a$val <- c(1:5)
+for (k in c(1:4)){
+  ap = sum((a[,k]*a[,"val"]))/ colSums(a)[k]
+  print(ap)
+}
+
+```
+
+descargar multimedia 
+```{r}
+a<-  as.data.frame(rbind(table(i_new_data_f$P124D, i_new_data_f$cluster)))
+a <- a[1:5,]
+a$val <- c(1:5)
+for (k in c(1:4)){
+  ap = sum((a[,k]*a[,"val"]))/ colSums(a)[k]
+  print(ap)
+}
+
+```
+
+jugar videojuegos 
+```{r}
+a<-  as.data.frame(rbind(table(i_new_data_f$P124E, i_new_data_f$cluster)))
+a <- a[1:5,]
+a$val <- c(1:5)
+for (k in c(1:4)){
+  ap = sum((a[,k]*a[,"val"]))/ colSums(a)[k]
+  print(ap)
+}
+
+```
+
+
+# Nivel de intrucción jefe del hogar 
+18 P153                                                        0.04007088
+```{r}
+table(i_new_data_f$P153)
+
+i_new_data_f$P153 <- as.factor(i_new_data_f$P153)
+levels(i_new_data_f$P153)<- c("Primaria o menos","Secundaria incompleta", "Secundaria completa", "Técnico", "FFAA,Policía, Normal", "Univeridad incompleta", "Universidad completa", "Posgrado")
+a = round(prop.table(table(i_new_data_f$P153, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P153", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P153, label= Freq )) + 
+  geom_bar (stat = "identity") +  
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5)) + 
+  scale_fill_brewer(palette = "RdYlGn" ) 
+ggsave("Graphs/P153_niveduc_Jefe.png", width = 6, height = 6)
+```
+
+# Nivel de instrucción del entrevsitado 
+19 P149                                                        0.03972640
+```{r}
+table(i_new_data_f$P149)
+
+i_new_data_f$P149 <- as.factor(i_new_data_f$P149)
+levels(i_new_data_f$P149)<- c("Primaria o menos","Secundaria incompleta", "Secundaria completa", "Técnico", "FFAA,Policía, Normal", "Univeridad incompleta", "Universidad completa", "Posgrado")
+a = round(prop.table(table(i_new_data_f$P149, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P149", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P149, label= Freq )) + 
+  geom_bar (stat = "identity") +  
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5)) + 
+  scale_fill_brewer(palette = "RdYlGn" ) 
+ggsave("Graphs/P149_niveduc_entrevistado.png", width = 6, height = 6)
+```
+
+# Utilizó el internet en estudios 
+20 P68                                                         0.03868487
+```{r}
+i_new_data_f$P68 <- as.factor(i_new_data_f$P68)
+levels(i_new_data_f$P68) <- c("Colegio", "Universidad", "No usa")
+table(i_new_data_f$P68)
+round(prop.table(table(i_new_data_f$P68, i_new_data_f$cluster), margin =1),2)
+ggplot(i_new_data_f, aes(x=P68, fill=cluster)) + 
+  geom_bar(aes(y=..prop.., group = cluster),position=position_dodge())
+ggsave("Graphs/P68_internet_estudios.png", width = 6, height = 6)
+
+```
+
+# Cantidad de personas en la vivienda 
+21 P157                                                        0.03279046
+```{r}
+table(i_new_data_f$P157)
+a<-  as.data.frame(rbind(table(i_new_data_f$P157, i_new_data_f$cluster)))
+a
+a <- a[1:12,]
+a$val <- c(1:12)
+for (k in c(1:4)){
+  ap = sum((a[,k]*a[,"val"]))/ colSums(a)[k]
+  print(ap)
+}
+
+```
+
+# P130A 
+
+
+# Edad de primera conexiön a internet 
+```{r}
+i_new_data_f$P143 <- Internautas$P143
+table(i_new_data_f$P143)
+```
+
+22 P130A                                                       0.03265838
+23 # P1                                                          0.02949885
+24 P47A                                                        0.02658977
+25 P43                                                         0.02374178
+26 P155                                                        0.02313126
+27 # P6                                                          0.02306069
+28 P63A                                                        0.02169306
+
+30 P55A                                                        0.02042245
+31 P150                                                        0.01897130
+32 P125                                                        0.01613242
+33 P129A                                                       0.01519754
+34 P57                                                         0.01475702
+35 # P23                                                         0.01426349
+36 P152                                                        0.01367157
+37 P156F                                                       0.01296929
+38 P156I                                                       0.01062968
+39 P51                                                         0.01061741
+40 P159                                                        0.01052025
+41 P56                                                         0.01050130
+
+# Describiendo el sexo de las personas
+```{r}
+i_new_data_f$P148 <- Internautas$P148
+table(i_new_data_f$P148, i_)
+
+i_new_data_f$P148 <- as.factor(i_new_data_f$P148)
+levels(i_new_data_f$P148) <- c("Hombre","Mujer")
+a = round(prop.table(table(i_new_data_f$P148, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P148", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P148, label= Freq )) + 
+  geom_bar (stat = "identity") + #ggtitle("¿Tienen Computadoras?") + 
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5)) + scale_fill_manual(values = c("#3399FF","#FF66FF")) + coord_flip()
+
+ggsave("Graphs/P148_Sexo.png", width = 6, height = 6)
+
+```
+
+
+# Tiene celular 
+```{r}
+i_new_data_f$P28 <- Internautas$P28
+table(i_new_data_f$P28)
+
+
+
+i_new_data_f$P6 <- as.factor(i_new_data_f$P6)
+levels(i_new_data_f$P6) <- c("Si","No")
+
+a = round(prop.table(table(i_new_data_f$P6, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P6", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P6, label= Freq )) + 
+  geom_bar (stat = "identity") + #ggtitle("¿Tienen Computadoras?") + 
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5)) + scale_fill_brewer(palette = "Set2")
+  #scale_fill_manual(values = c("#33CC33","#FF3300"))
+
+ggsave("Graphs/P28_tiene_Celular.png", width = 6, height = 6)
+```
+Uso que se le da a los celulares 
+```{r}
+table(i_new_data_f$P31E)
+i_new_data_f$P31A <- Internautas$P31A
+i_new_data_f$P31B <- Internautas$P31B
+i_new_data_f$P31C <- Internautas$P31C
+i_new_data_f$P31D <- Internautas$P31D
+i_new_data_f$P31E <- Internautas$P31E
+i_new_data_f$P31F <- Internautas$P31F
+
+a1 <- as.data.frame(table(i_new_data_f$P31A, i_new_data_f$cluster))
+a2 <- as.data.frame(table(i_new_data_f$P31B, i_new_data_f$cluster))
+a3 <- as.data.frame(table(i_new_data_f$P31C, i_new_data_f$cluster))
+
+total <- merge(a1,a2,by=c("Var1","Var2"), all = TRUE) 
+total <- merge(total,a3,by=c("Var1","Var2"), all = TRUE)
+
+total
+total[is.na(total)] = 0
+total$FreqT <- total$Freq.x + total$Freq.y + total$Freq
+total[,3:5] <- NULL
+total
+
+df <- data.frame(total[which(total$Var1 ==1),3], total[which(total$Var1 ==2),3], total[which(total$Var1 ==3),3], total[which(total$Var1 ==4),3], total[which(total$Var1 ==5),3], total[which(total$Var1 ==6),3], total[which(total$Var1 ==7),3], total[which(total$Var1 ==8),3])
+# Cambiando las etiquetas en función de las opciones 
+colnames(df) <- c("Llamadas", "SMS", "Música", "Videos", "Juegos", "Internet", "Fotos", "Otro" )
+row.names(df)<- c("A","B","C","D") 
+df = total 
+df
+dfToPercapita(df) # Intensidad de uso 
+dfToPreRela(df) # Preferencia relativa uso
+```
+
+Uso de internet en el celular 
+```{r}
+table(i_new_data_f$P41F)
+i_new_data_f$P41A <- Internautas$P41A
+i_new_data_f$P41B <- Internautas$P41B
+i_new_data_f$P41C <- Internautas$P41C
+i_new_data_f$P41D <- Internautas$P41D
+i_new_data_f$P41E <- Internautas$P41E
+i_new_data_f$P41F <- Internautas$P41F
+
+a1 <- as.data.frame(table(i_new_data_f$P41A, i_new_data_f$cluster))
+a2 <- as.data.frame(table(i_new_data_f$P41B, i_new_data_f$cluster))
+a3 <- as.data.frame(table(i_new_data_f$P41C, i_new_data_f$cluster))
+
+total <- merge(a1,a2,by=c("Var1","Var2"), all = TRUE) 
+total <- merge(total,a3,by=c("Var1","Var2"), all = TRUE)
+
+total
+total[is.na(total)] = 0
+total$FreqT <- total$Freq.x + total$Freq.y + total$Freq
+total[,3:5] <- NULL
+total
+
+df <- data.frame(total[which(total$Var1 ==1),3], total[which(total$Var1 ==2),3], total[which(total$Var1 ==3),3], total[which(total$Var1 ==4),3], total[which(total$Var1 ==5),3], total[which(total$Var1 ==6),3], total[which(total$Var1 ==7),3], total[which(total$Var1 ==8),3], total[which(total$Var1 ==9),3], total[which(total$Var1 ==10),3], total[which(total$Var1 ==11),3], total[which(total$Var1 ==12),3])
+# Cambiando las etiquetas en función de las opciones 
+colnames(df) <- c("Contacto A y F", "Buscar información", "Compras", "Académicos", "Trabajo", "Ver noticias", "Descargar archivos", "Jugar", "Multimedia", "RRSS", "eMail", "Otro" )
+row.names(df)<- c("A","B","C","D") 
+df = total 
+df
+dfToPercapita(df) # Intensidad de uso 
+dfToPreRela(df) # Preferencia relativa uso
+```
+Sistema operativo de teléfono
+```{r}
+i_new_data_f$P36A <- Internautas$P36A
+
+
+i_new_data_f$P36A <- as.factor(i_new_data_f$P36A)
+levels(i_new_data_f$P36A) <- c("Android", "IOS (iPhone)", "Windows", "Otro", "NS/NR")
+a = round(prop.table(table(i_new_data_f$P36A, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P36A", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P36A, label= Freq )) + 
+  geom_bar (stat = "identity") + #ggtitle("¿Tienen Computadoras?") +
+  scale_fill_brewer(palette = "Accent") + coord_flip()
+
+ggsave("Graphs/P36A_Sistema operativo tel.png", width = 6, height = 6)
+
+
+```
+
+tiene internet en su celular 
+```{r}
+i_new_data_f$P37 <- Internautas$P37
+table(i_new_data_f$P37)
+
+
+
+i_new_data_f$P37 <- as.factor(i_new_data_f$P37)
+levels(i_new_data_f$P37) <- c("Si","No")
+
+a = round(prop.table(table(i_new_data_f$P37, i_new_data_f$cluster), margin =2),2) 
+a <- as.data.frame(a)
+colnames(a) = c("P37", "Cluster", "Freq")
+a
+ggplot(a, aes(x = Cluster, y = Freq , fill = P37, label= Freq )) + 
+  geom_bar (stat = "identity") + #ggtitle("¿Tienen Computadoras?") + 
+  ylab("%")  + geom_text(size=5, position = position_stack(vjust = 0.5)) + scale_fill_brewer(palette = "Set2")
+  #scale_fill_manual(values = c("#33CC33","#FF3300"))
+
+ggsave("Graphs/P37_tiene_int_movil.png", width = 6, height = 6)
+```
+
+Gasto en el último celular 
+```{r}
+i_new_data_f$P30 <- Internautas$P30
+tapply(i_new_data_f$P30, i_new_data_f$cluster, summary)
+ggplot(i_new_data_f, aes(x=cluster, y=P30, fill=cluster)) + 
+  geom_boxplggsave("Graphs/P30_gasto en el último celular.png", width = 6, height = 6)
+ot() + ylab("edad (años)") #box plot  
+```
+
